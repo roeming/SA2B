@@ -53,7 +53,7 @@ extern int signgam;
 enum fdversion { fdlibm_ieee = -1, fdlibm_svid, fdlibm_xopen, fdlibm_posix };
 
 #define _LIB_VERSION_TYPE enum fdversion
-#define _LIB_VERSION      _fdlib_version
+#define _LIB_VERSION      _IEEE_
 
 /* if global variable _LIB_VERSION is not desirable, one may
  * change the following to be a constant by:

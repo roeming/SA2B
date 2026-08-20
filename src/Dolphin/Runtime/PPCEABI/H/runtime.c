@@ -994,7 +994,7 @@ zero:
 	stw     r3, 0x8 (r1)
 	stw     r4, 0xc (r1)
 	lfd     f1, 0x8 (r1)
-	frsp    f1, f1
+	// frsp    f1, f1
 	addi    r1, r1, 0x10
 	blr
 #endif // clang-format on

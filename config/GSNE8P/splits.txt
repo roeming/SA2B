@@ -315,9 +315,6 @@ Dolphin/gx/GXTexture.c:
 	.sdata      start:0x803AD658 end:0x803AD698
 	.sdata2     start:0x803B08F8 end:0x803B0920
 
-Dolphin/card/CARDNet.c:
-	.sdata      start:0x803AD788 end:0x803AD78A
-
 Dolphin/gx/GXBump.c:
 	.text       start:0x801040D4 end:0x801044A8
 
@@ -343,6 +340,193 @@ Dolphin/gx/GXTransform.c:
 Dolphin/gx/GXPerf.c:
 	.text       start:0x80105CB8 end:0x80106560
 	.data       start:0x801D2B08 end:0x801D2BF8
+
+Dolphin/Runtime/PPCEABI/H/__va_arg.c:
+	.text       start:0x8010AE00 end:0x8010AEF4
+
+Dolphin/Runtime/PPCEABI/H/global_destructor_chain.c:
+	.text       start:0x8010AEF4 end:0x8010AF3C
+	.dtors      start:0x80173160 end:0x80173164
+	.sbss       start:0x803ADFF0 end:0x803ADFF8
+
+Dolphin/Runtime/PPCEABI/H/runtime.c:
+	.text       start:0x8010AF3C end:0x8010B458
+	.rodata     start:0x80176318 end:0x80176330
+
+Dolphin/MSL_C/PPCEABI/bare/H/abort_exit.c:
+	.text       start:0x8010B458 end:0x8010B564
+	.bss        start:0x802D6EE8 end:0x802D70E8
+	.sbss       start:0x803ADFF8 end:0x803AE010
+
+Dolphin/MSL_C/PPCEABI/bare/H/errno.c:
+	.sbss       start:0x803AE010 end:0x803AE018
+
+Dolphin/MSL_C/PPCEABI/bare/H/ansi_fp.c:
+	.text       start:0x8010B564 end:0x8010B918
+	.rodata     start:0x80176330 end:0x801763B8
+	.sdata2     start:0x803B0970 end:0x803B0998
+
+Dolphin/MSL_C/PPCEABI/bare/H/buffer_io.c:
+	.text       start:0x8010B918 end:0x8010BA18
+
+Dolphin/MSL_C/PPCEABI/bare/H/critical_regions.ppc_eabi.c:
+	.text       start:0x8010BA18 end:0x8010BA1C
+
+Dolphin/MSL_C/PPCEABI/bare/H/ctype.c:
+	.text       start:0x8010BA1C end:0x8010BA6C
+	.rodata     start:0x801763B8 end:0x801766B8
+
+Dolphin/MSL_C/PPCEABI/bare/H/direct_io.c:
+	.text       start:0x8010BA6C end:0x8010BD48
+
+Dolphin/MSL_C/PPCEABI/bare/H/mbstring.c:
+	.text       start:0x8010BD48 end:0x8010BD84
+
+Dolphin/MSL_C/PPCEABI/bare/H/mem.c:
+	.text       start:0x8010BD84 end:0x8010BED0
+
+Dolphin/MSL_C/PPCEABI/bare/H/mem_funcs.c:
+	.text       start:0x8010BED0 end:0x8010C1AC
+
+Dolphin/MSL_C/PPCEABI/bare/H/misc_io.c:
+	.text       start:0x8010C1AC end:0x8010C1B0
+
+Dolphin/MSL_C/PPCEABI/bare/H/printf.c:
+	.text       start:0x8010C1B0 end:0x8010DC80
+	.rodata     start:0x801766B8 end:0x801766C8
+	.data       start:0x801D2E20 end:0x801D3040
+	.sdata      start:0x803AD698 end:0x803AD6A0
+	.sdata2     start:0x803B0998 end:0x803B09A0
+
+Dolphin/MSL_C/PPCEABI/bare/H/rand.c:
+	.text       start:0x8010DC80 end:0x8010DCAC
+	.sdata      start:0x803AD6A0 end:0x803AD6A8
+
+Dolphin/MSL_C/PPCEABI/bare/H/scanf.c:
+	.text       start:0x8010DCAC end:0x8010DD3C
+
+Dolphin/MSL_C/PPCEABI/bare/H/string.c:
+	.text       start:0x8010DD3C end:0x8010E0CC
+	.sdata      start:0x803AD6A8 end:0x803AD6B0
+
+Dolphin/card/CARDNet.c:
+	.sdata      start:0x803AD788 end:0x803AD78A
+
+Dolphin/MSL_C/PPCEABI/bare/H/strtoul.c:
+	.text       start:0x8010E0CC end:0x8010E4D8
+	.data       start:0x801D3040 end:0x801D3084
+
+Dolphin/MSL_C/PPCEABI/bare/H/float.c:
+	.data       start:0x801D3088 end:0x801D3090
+
+Dolphin/MSL_C/PPCEABI/bare/H/uart_console_io.c:
+	.text       start:0x8010E4D8 end:0x8010E658
+	.sbss       start:0x803AE018 end:0x803AE020
+
+Dolphin/MSL_C/PPCEABI/bare/H/wchar_io.c:
+	.text       start:0x8010E658 end:0x8010E6D8
+
+Dolphin/MSL_C/PPCEABI/bare/H/e_asin.c:
+	.text       start:0x8010E6D8 end:0x8010E6E0
+
+Dolphin/MSL_C/PPCEABI/bare/H/e_log.c:
+	.text       start:0x8010E6E0 end:0x8010E968
+	.sbss       start:0x803AE020 end:0x803AE028
+	.sdata2     start:0x803B09A0 end:0x803B0A20
+
+Dolphin/MSL_C/PPCEABI/bare/H/e_log10.c:
+	.text       start:0x8010E968 end:0x8010EA84
+	.sbss       start:0x803AE028 end:0x803AE030
+	.sdata2     start:0x803B0A20 end:0x803B0A50
+
+Dolphin/MSL_C/PPCEABI/bare/H/e_pow.c:
+	.text       start:0x8010EA84 end:0x8010F2BC
+	.rodata     start:0x801766C8 end:0x801766F8
+	.sdata2     start:0x803B0A50 end:0x803B0B60
+
+Dolphin/MSL_C/PPCEABI/bare/H/e_rem_pio2.c:
+	.text       start:0x8010F2BC end:0x8010F6B0
+	.rodata     start:0x801766F8 end:0x80176880
+	.sdata2     start:0x803B0B60 end:0x803B0BB8
+
+Dolphin/MSL_C/PPCEABI/bare/H/fminmaxdim.c:
+	.text       start:0x8010F6B0 end:0x8010F730
+
+Dolphin/MSL_C/PPCEABI/bare/H/k_cos.c:
+	.text       start:0x8010F730 end:0x8010F828
+	.sdata2     start:0x803B0BB8 end:0x803B0C00
+
+Dolphin/MSL_C/PPCEABI/bare/H/k_rem_pio2.c:
+	.text       start:0x8010F828 end:0x801108CC
+	.rodata     start:0x80176880 end:0x801768D0
+	.sdata2     start:0x803B0C00 end:0x803B0C40
+
+Dolphin/MSL_C/PPCEABI/bare/H/k_sin.c:
+	.text       start:0x801108CC end:0x80110970
+	.sdata2     start:0x803B0C40 end:0x803B0C78
+
+Dolphin/MSL_C/PPCEABI/bare/H/s_copysign.c:
+	.text       start:0x80110970 end:0x8011099C
+
+Dolphin/MSL_C/PPCEABI/bare/H/s_cos.c:
+	.text       start:0x8011099C end:0x80110A7C
+	.sdata2     start:0x803B0C78 end:0x803B0C80
+
+Dolphin/MSL_C/PPCEABI/bare/H/s_floor.c:
+	.text       start:0x80110A7C end:0x80110BE8
+	.sdata2     start:0x803B0C80 end:0x803B0C90
+
+Dolphin/MSL_C/PPCEABI/bare/H/s_frexp.c:
+	.text       start:0x80110BE8 end:0x80110C84
+	.sdata2     start:0x803B0C90 end:0x803B0C98
+
+Dolphin/MSL_C/PPCEABI/bare/H/s_ldexp.c:
+	.text       start:0x80110C84 end:0x80110DFC
+	.sdata2     start:0x803B0C98 end:0x803B0CC0
+
+Dolphin/MSL_C/PPCEABI/bare/H/w_log.c:
+	.text       start:0x80110DFC end:0x80110E1C
+
+Dolphin/MSL_C/PPCEABI/bare/H/w_log10.c:
+	.text       start:0x80110E1C end:0x80110E3C
+
+Dolphin/MSL_C/PPCEABI/bare/H/w_pow.c:
+	.text       start:0x80110E3C end:0x80110E5C
+
+Dolphin/MSL_C/PPCEABI/bare/H/hyperbolicsf.c:
+	.text       start:0x80110E5C end:0x80110E64
+
+Dolphin/MSL_C/PPCEABI/bare/H/inverse_trig.c:
+	.text       start:0x80110E64 end:0x80111240
+	.rodata     start:0x801768D0 end:0x80176988
+	.sdata2     start:0x803B0CC0 end:0x803B0CE0
+
+Dolphin/MSL_C/PPCEABI/bare/H/ceilfloor.c:
+	.text       start:0x80111240 end:0x80111390
+	.sdata2     start:0x803B0CE0 end:0x803B0CE8
+
+Dolphin/MSL_C/PPCEABI/bare/H/trigf.c:
+	.text       start:0x80111390 end:0x8011177C
+	.ctors      start:0x80173140 end:0x80173144
+	.rodata     start:0x80176988 end:0x80176998
+	.data       start:0x801D3090 end:0x801D30A0
+	.sdata2     start:0x803B0CE8 end:0x803B0D00
+
+Dolphin/MSL_C/PPCEABI/bare/H/common_float_tables.c:
+	.rodata     start:0x80176998 end:0x80176DE8
+
+Dolphin/MSL_C/PPCEABI/bare/H/math_inlines.c:
+	.text       start:0x8011177C end:0x8011180C
+	.sdata2     start:0x803B0D00 end:0x803B0D18
+
+Dolphin/MSL_C/PPCEABI/bare/H/powf.c:
+	.text       start:0x8011180C end:0x80111F4C
+	.rodata     start:0x80176DE8 end:0x80177030
+	.sdata2     start:0x803B0D18 end:0x803B0D50
+
+Dolphin/MSL_C/PPCEABI/bare/H/logf.c:
+	.text       start:0x80111F4C end:0x801120B8
+	.sdata2     start:0x803B0D50 end:0x803B0D70
 
 Dolphin/card/CARDBios.c:
 	.text       start:0x8016C668 end:0x8016D9B8
@@ -392,3 +576,6 @@ Dolphin/card/CARDStat.c:
 
 Dolphin/card/CARDStatEX.c:
 	.text       start:0x80172D90 end:0x80173124
+
+Dolphin/Runtime/PPCEABI/H/__mem.c:
+	.init       start:0x8000532C end:0x80005470

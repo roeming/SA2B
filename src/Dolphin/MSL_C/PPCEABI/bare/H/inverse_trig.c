@@ -72,6 +72,11 @@ f32 atan__Ff(f32 x)
 	return atanf(x);
 }
 
+f32 asinf(f32 x)
+{
+	return atan__Ff(x * _inv_sqrtf(1.f - x * x));
+}
+
 #pragma dont_inline reset
 
 /**

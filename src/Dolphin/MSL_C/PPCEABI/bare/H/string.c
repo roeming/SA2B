@@ -145,7 +145,21 @@ char* strcat(char* dst, const char* src)
  */
 char* strncat(char* dst, const char* src, size_t n)
 {
-	TRAP_UNIMPLEMENTED;
+    const u8* p = (u8*)src - 1;
+    u8* q = (u8*)dst - 1;
+    while (*++q);
+    q--;
+    n++;
+
+    while (--n) {
+        if (!(*++q = *++p)) {
+            --q;
+            break;
+        }
+    }
+    q[1] = 0;
+    
+    return dst;
 }
 
 /**

@@ -10,14 +10,14 @@
 extern BOOL _rename_CheckFlag0x20(task *tp);
 extern void _rename_SetFlag0x20(task *tp);
 extern void fn_800260FC(u32, float, float, float);
-extern void fn_8011E158(NJS_MODEL *);
+extern void fn_8011E158(NJS_CNK_OBJECT *);
 extern s32 _rename_GetPlayerCharacter(s32);
 extern s32 _rename_EitherPlayerWithinSphere(NJS_VECTOR *, float);
-extern void fn_8006539C(task *tp, u8 smode);
+extern void _rename_SetConditionFlag(task *tp, u8 smode);
 
 extern CCL_INFO pipe_colli_info[1];
 extern NJS_TEXLIST pipe_tex;
-extern NJS_MODEL pipe_model;
+extern NJS_CNK_OBJECT pipe_model;
 extern const NJS_POINT3 pipe_src_point;
 
 // ^ extern
@@ -80,7 +80,7 @@ static void ObjectChaoPipeExec(task *tp) {
           njCalcPoint(NULL, &pipe_src_point, &point);
           njPopMatrix(1);
           fn_800260FC((u32)(twp->scl.x) % 3, point.x, point.y, point.z);
-          fn_8006539C(tp, 1);
+          _rename_SetConditionFlag(tp, 1);
           SE_Call(0x100a, NULL, 0, 0);
           _rename_SetFlag0x20(tp);
         }

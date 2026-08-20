@@ -210,13 +210,9 @@ stg10D_50.c:
 	.text       start:0x0001DBB8 end:0x0001E678
 	.rodata     start:0x000009B8 end:0x00000A08
 
-stg10D_51.c:
-	.text       start:0x0001E678 end:0x0001E96C
-	.rodata     start:0x00000A08 end:0x00000A20
-
-stg10D_52.c:
-	.text       start:0x0001E96C end:0x0001EA2C
-	.rodata     start:0x00000A20 end:0x00000A28
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001E678 end:0x0001EA2C
+	.rodata     start:0x00000A08 end:0x00000A28
 
 stg10D_53.c:
 	.text       start:0x0001EA2C end:0x0001F2B0

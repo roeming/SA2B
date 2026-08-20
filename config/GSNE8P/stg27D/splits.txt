@@ -182,13 +182,9 @@ stg27D_43.c:
 	.text       start:0x0001AB7C end:0x0001B63C
 	.rodata     start:0x00000960 end:0x000009B0
 
-stg27D_44.c:
-	.text       start:0x0001B63C end:0x0001B930
-	.rodata     start:0x000009B0 end:0x000009C8
-
-stg27D_45.c:
-	.text       start:0x0001B930 end:0x0001B9F0
-	.rodata     start:0x000009C8 end:0x000009D0
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001B63C end:0x0001B9F0
+	.rodata     start:0x000009B0 end:0x000009D0
 
 stg27D_46.c:
 	.text       start:0x0001B9F0 end:0x0001C274

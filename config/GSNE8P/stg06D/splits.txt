@@ -162,13 +162,9 @@ stg06D_38.c:
 	.text       start:0x00016914 end:0x000173D4
 	.rodata     start:0x000007C0 end:0x00000810
 
-stg06D_39.c:
-	.text       start:0x000173D4 end:0x000176C8
-	.rodata     start:0x00000810 end:0x00000828
-
-stg06D_40.c:
-	.text       start:0x000176C8 end:0x00017788
-	.rodata     start:0x00000828 end:0x00000830
+OBJECT/o_chaopipe.c:
+	.text       start:0x000173D4 end:0x00017788
+	.rodata     start:0x00000810 end:0x00000830
 
 stg06D_41.c:
 	.text       start:0x00017788 end:0x0001800C

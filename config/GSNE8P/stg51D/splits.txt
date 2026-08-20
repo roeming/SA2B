@@ -190,13 +190,9 @@ stg51D_45.c:
 	.text       start:0x000190F4 end:0x00019BB4
 	.rodata     start:0x000008F0 end:0x00000940
 
-stg51D_46.c:
-	.text       start:0x00019BB4 end:0x00019EA8
-	.rodata     start:0x00000940 end:0x00000958
-
-stg51D_47.c:
-	.text       start:0x00019EA8 end:0x00019F68
-	.rodata     start:0x00000958 end:0x00000960
+OBJECT/o_chaopipe.c:
+	.text       start:0x00019BB4 end:0x00019F68
+	.rodata     start:0x00000940 end:0x00000960
 
 stg51D_48.c:
 	.text       start:0x00019F68 end:0x0001A7EC

@@ -246,13 +246,9 @@ stg21D_59.c:
 	.text       start:0x0001BA88 end:0x0001C548
 	.rodata     start:0x00000948 end:0x00000998
 
-stg21D_60.c:
-	.text       start:0x0001C548 end:0x0001C83C
-	.rodata     start:0x00000998 end:0x000009B0
-
-stg21D_61.c:
-	.text       start:0x0001C83C end:0x0001C8FC
-	.rodata     start:0x000009B0 end:0x000009B8
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001C548 end:0x0001C8FC
+	.rodata     start:0x00000998 end:0x000009B8
 
 stg21D_62.c:
 	.text       start:0x0001C8FC end:0x0001D180

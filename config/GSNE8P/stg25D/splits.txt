@@ -270,13 +270,9 @@ stg25D_65.c:
 	.text       start:0x000240DC end:0x00024B9C
 	.rodata     start:0x00000C28 end:0x00000C78
 
-stg25D_66.c:
-	.text       start:0x00024B9C end:0x00024E90
-	.rodata     start:0x00000C78 end:0x00000C90
-
-stg25D_67.c:
-	.text       start:0x00024E90 end:0x00024F50
-	.rodata     start:0x00000C90 end:0x00000C98
+OBJECT/o_chaopipe.c:
+	.text       start:0x00024B9C end:0x00024F50
+	.rodata     start:0x00000C78 end:0x00000C98
 
 stg25D_68.c:
 	.text       start:0x00024F50 end:0x000257D4

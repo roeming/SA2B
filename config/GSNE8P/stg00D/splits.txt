@@ -86,13 +86,9 @@ stg00D_19.c:
 	.text       start:0x000085B0 end:0x00009A0C
 	.rodata     start:0x00000388 end:0x000003D0
 
-stg00D_20.c:
-	.text       start:0x00009A0C end:0x00009D00
-	.rodata     start:0x000003D0 end:0x000003E8
-
-stg00D_21.c:
-	.text       start:0x00009D00 end:0x00009DC0
-	.rodata     start:0x000003E8 end:0x000003F0
+OBJECT/o_chaopipe.c:
+	.text       start:0x00009A0C end:0x00009DC0
+	.rodata     start:0x000003D0 end:0x000003F0
 
 stg00D_22.c:
 	.text       start:0x00009DC0 end:0x0000A8B8

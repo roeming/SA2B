@@ -214,13 +214,9 @@ boss_last1D_51.c:
 	.text       start:0x0001C484 end:0x0001D8E0
 	.rodata     start:0x00000EC8 end:0x00000F10
 
-boss_last1D_52.c:
-	.text       start:0x0001D8E0 end:0x0001DBD4
-	.rodata     start:0x00000F10 end:0x00000F28
-
-boss_last1D_53.c:
-	.text       start:0x0001DBD4 end:0x0001DC94
-	.rodata     start:0x00000F28 end:0x00000F30
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001D8E0 end:0x0001DC94
+	.rodata     start:0x00000F10 end:0x00000F30
 
 boss_last1D_54.c:
 	.text       start:0x0001DC94 end:0x0001E78C

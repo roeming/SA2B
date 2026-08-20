@@ -218,13 +218,9 @@ stg47D_52.c:
 	.text       start:0x0001A3CC end:0x0001AE8C
 	.rodata     start:0x00000918 end:0x00000968
 
-stg47D_53.c:
-	.text       start:0x0001AE8C end:0x0001B180
-	.rodata     start:0x00000968 end:0x00000980
-
-stg47D_54.c:
-	.text       start:0x0001B180 end:0x0001B240
-	.rodata     start:0x00000980 end:0x00000988
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001AE8C end:0x0001B240
+	.rodata     start:0x00000968 end:0x00000988
 
 stg47D_55.c:
 	.text       start:0x0001B240 end:0x0001BAC4

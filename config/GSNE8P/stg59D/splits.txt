@@ -258,13 +258,9 @@ stg59D_62.c:
 	.text       start:0x000240F4 end:0x00024BB4
 	.rodata     start:0x00000C28 end:0x00000C78
 
-stg59D_63.c:
-	.text       start:0x00024BB4 end:0x00024EA8
-	.rodata     start:0x00000C78 end:0x00000C90
-
-stg59D_64.c:
-	.text       start:0x00024EA8 end:0x00024F68
-	.rodata     start:0x00000C90 end:0x00000C98
+OBJECT/o_chaopipe.c:
+	.text       start:0x00024BB4 end:0x00024F68
+	.rodata     start:0x00000C78 end:0x00000C98
 
 stg59D_65.c:
 	.text       start:0x00024F68 end:0x000257EC

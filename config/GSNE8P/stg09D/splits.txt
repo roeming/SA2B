@@ -198,13 +198,9 @@ stg09D_47.c:
 	.text       start:0x00017FA8 end:0x00018A68
 	.rodata     start:0x000008E8 end:0x00000938
 
-stg09D_48.c:
-	.text       start:0x00018A68 end:0x00018D5C
-	.rodata     start:0x00000938 end:0x00000950
-
-stg09D_49.c:
-	.text       start:0x00018D5C end:0x00018E1C
-	.rodata     start:0x00000950 end:0x00000958
+OBJECT/o_chaopipe.c:
+	.text       start:0x00018A68 end:0x00018E1C
+	.rodata     start:0x00000938 end:0x00000958
 
 stg09D_50.c:
 	.text       start:0x00018E1C end:0x000196A0

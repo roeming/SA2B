@@ -193,13 +193,9 @@ stg15D_46.c:
 	.text       start:0x00018BD0 end:0x00019690
 	.rodata     start:0x000008E8 end:0x00000938
 
-stg15D_47.c:
-	.text       start:0x00019690 end:0x00019984
-	.rodata     start:0x00000938 end:0x00000950
-
-stg15D_48.c:
-	.text       start:0x00019984 end:0x00019A44
-	.rodata     start:0x00000950 end:0x00000958
+OBJECT/o_chaopipe.c:
+	.text       start:0x00019690 end:0x00019A44
+	.rodata     start:0x00000938 end:0x00000958
 
 stg15D_49.c:
 	.text       start:0x00019A44 end:0x0001A2C8

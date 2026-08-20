@@ -174,13 +174,9 @@ stg05D_41.c:
 	.text       start:0x0001755C end:0x0001801C
 	.rodata     start:0x00000788 end:0x000007D8
 
-stg05D_42.c:
-	.text       start:0x0001801C end:0x00018310
-	.rodata     start:0x000007D8 end:0x000007F0
-
-stg05D_43.c:
-	.text       start:0x00018310 end:0x000183D0
-	.rodata     start:0x000007F0 end:0x000007F8
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001801C end:0x000183D0
+	.rodata     start:0x000007D8 end:0x000007F8
 
 stg05D_44.c:
 	.text       start:0x000183D0 end:0x00018C54

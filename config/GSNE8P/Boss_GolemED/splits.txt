@@ -154,13 +154,9 @@ Boss_GolemED_36.c:
 	.text       start:0x0001B384 end:0x0001C7E0
 	.rodata     start:0x00000FC0 end:0x00001008
 
-Boss_GolemED_37.c:
-	.text       start:0x0001C7E0 end:0x0001CAD4
-	.rodata     start:0x00001008 end:0x00001020
-
-Boss_GolemED_38.c:
-	.text       start:0x0001CAD4 end:0x0001CB94
-	.rodata     start:0x00001020 end:0x00001028
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001C7E0 end:0x0001CB94
+	.rodata     start:0x00001008 end:0x00001028
 
 Boss_GolemED_39.c:
 	.text       start:0x0001CB94 end:0x0001D68C

@@ -182,13 +182,9 @@ stg43D_43.c:
 	.text       start:0x000199B0 end:0x0001A470
 	.rodata     start:0x00000898 end:0x000008E8
 
-stg43D_44.c:
-	.text       start:0x0001A470 end:0x0001A764
-	.rodata     start:0x000008E8 end:0x00000900
-
-stg43D_45.c:
-	.text       start:0x0001A764 end:0x0001A824
-	.rodata     start:0x00000900 end:0x00000908
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001A470 end:0x0001A824
+	.rodata     start:0x000008E8 end:0x00000908
 
 stg43D_46.c:
 	.text       start:0x0001A824 end:0x0001B0A8

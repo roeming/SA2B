@@ -125,7 +125,7 @@ Sections:
 	.text       start:0x00011014 end:0x00011AD4
 	.rodata     start:0x00000610 end:0x00000660
 
-54d_30.c:
+OBJECT/o_chaopipe.c:
 	.text       start:0x00011AD4 end:0x00011E88
 	.rodata     start:0x00000660 end:0x00000680
 

@@ -158,13 +158,9 @@ stg31D_37.c:
 	.text       start:0x00013A44 end:0x00014504
 	.rodata     start:0x000006C8 end:0x00000718
 
-stg31D_38.c:
-	.text       start:0x00014504 end:0x000147F8
-	.rodata     start:0x00000718 end:0x00000730
-
-stg31D_39.c:
-	.text       start:0x000147F8 end:0x000148B8
-	.rodata     start:0x00000730 end:0x00000738
+OBJECT/o_chaopipe.c:
+	.text       start:0x00014504 end:0x000148B8
+	.rodata     start:0x00000718 end:0x00000738
 
 stg31D_40.c:
 	.text       start:0x000148B8 end:0x0001513C

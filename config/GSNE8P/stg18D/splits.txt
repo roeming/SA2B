@@ -242,13 +242,9 @@ stg18D_58.c:
 	.text       start:0x0001EDD0 end:0x0001F890
 	.rodata     start:0x00000AB0 end:0x00000B00
 
-stg18D_59.c:
-	.text       start:0x0001F890 end:0x0001FB84
-	.rodata     start:0x00000B00 end:0x00000B18
-
-stg18D_60.c:
-	.text       start:0x0001FB84 end:0x0001FC44
-	.rodata     start:0x00000B18 end:0x00000B20
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001F890 end:0x0001FC44
+	.rodata     start:0x00000B00 end:0x00000B20
 
 stg18D_61.c:
 	.text       start:0x0001FC44 end:0x000204C8

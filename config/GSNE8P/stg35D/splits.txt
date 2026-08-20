@@ -7,7 +7,7 @@ Sections:
 	.bss        type:bss align:8
 
 stg35D_0.c:
-	.text       start:0x000000B4 end:0x00000160
+	.text       start:0x00000000 end:0x00000160
 	.rodata     start:0x00000000 end:0x00000008
 
 stg35D_1.c:
@@ -150,13 +150,9 @@ stg35D_35.c:
 	.text       start:0x00024F44 end:0x00025A04
 	.rodata     start:0x00000B90 end:0x00000BE0
 
-stg35D_36.c:
-	.text       start:0x00025A04 end:0x00025CF8
-	.rodata     start:0x00000BE0 end:0x00000BF8
-
-stg35D_37.c:
-	.text       start:0x00025CF8 end:0x00025DB8
-	.rodata     start:0x00000BF8 end:0x00000C00
+OBJECT/o_chaopipe.c:
+	.text       start:0x00025A04 end:0x00025DB8
+	.rodata     start:0x00000BE0 end:0x00000C00
 
 stg35D_38.c:
 	.text       start:0x00025DB8 end:0x0002663C

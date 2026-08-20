@@ -130,13 +130,9 @@ boss_fdogD_30.c:
 	.text       start:0x000115D8 end:0x00012A34
 	.rodata     start:0x000007C8 end:0x00000810
 
-boss_fdogD_31.c:
-	.text       start:0x00012A34 end:0x00012D28
-	.rodata     start:0x00000810 end:0x00000828
-
-boss_fdogD_32.c:
-	.text       start:0x00012D28 end:0x00012DE8
-	.rodata     start:0x00000828 end:0x00000830
+OBJECT/o_chaopipe.c:
+	.text       start:0x00012A34 end:0x00012DE8
+	.rodata     start:0x00000810 end:0x00000830
 
 boss_fdogD_33.c:
 	.text       start:0x00012DE8 end:0x000138E0

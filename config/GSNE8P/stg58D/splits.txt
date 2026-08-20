@@ -198,13 +198,9 @@ stg58D_47.c:
 	.text       start:0x0001F884 end:0x00020344
 	.rodata     start:0x00000AF0 end:0x00000B40
 
-stg58D_48.c:
-	.text       start:0x00020344 end:0x00020638
-	.rodata     start:0x00000B40 end:0x00000B58
-
-stg58D_49.c:
-	.text       start:0x00020638 end:0x000206F8
-	.rodata     start:0x00000B58 end:0x00000B60
+OBJECT/o_chaopipe.c:
+	.text       start:0x00020344 end:0x000206F8
+	.rodata     start:0x00000B40 end:0x00000B60
 
 stg58D_50.c:
 	.text       start:0x000206F8 end:0x00020F7C

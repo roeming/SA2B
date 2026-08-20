@@ -41,7 +41,8 @@ void ObjectCeAdxChgDest(task *tp) {
     if (fn_8001CC18(0)) {
       _rename_PlayAdxFile("c_escap1.adx");
     } else {
-      _rename_PlayAdxFile("c_escap3.adx"); // GUN truck theme
+      // Escape From The City (no bass intro)
+      _rename_PlayAdxFile("c_escap3.adx");
     }
   } break;
   case 0:
@@ -57,7 +58,7 @@ void ObjectCeAdxChgExec(task *tp) {
         (twp->mode == 0 || twp->mode == 2 || twp->mode == 4)) {
       twp->mode = 1;
       fn_80011DF4();
-      fn_80011FB0("c_escap2.adx");
+      fn_80011FB0("c_escap2.adx"); // GUN truck theme
     }
     switch (fn_8001CD40()) {
     case 16: {

@@ -178,13 +178,9 @@ stg17D_42.c:
 	.text       start:0x00021730 end:0x000221F0
 	.rodata     start:0x00000A10 end:0x00000A60
 
-stg17D_43.c:
-	.text       start:0x000221F0 end:0x000224E4
-	.rodata     start:0x00000A60 end:0x00000A78
-
-stg17D_44.c:
-	.text       start:0x000224E4 end:0x000225A4
-	.rodata     start:0x00000A78 end:0x00000A80
+OBJECT/o_chaopipe.c:
+	.text       start:0x000221F0 end:0x000225A4
+	.rodata     start:0x00000A60 end:0x00000A80
 
 stg17D_45.c:
 	.text       start:0x000225A4 end:0x00022E28

@@ -242,13 +242,9 @@ stg32D_58.c:
 	.text       start:0x0001C168 end:0x0001CC28
 	.rodata     start:0x00000970 end:0x000009C0
 
-stg32D_59.c:
-	.text       start:0x0001CC28 end:0x0001CF1C
-	.rodata     start:0x000009C0 end:0x000009D8
-
-stg32D_60.c:
-	.text       start:0x0001CF1C end:0x0001CFDC
-	.rodata     start:0x000009D8 end:0x000009E0
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001CC28 end:0x0001CFDC
+	.rodata     start:0x000009C0 end:0x000009E0
 
 stg32D_61.c:
 	.text       start:0x0001CFDC end:0x0001D860

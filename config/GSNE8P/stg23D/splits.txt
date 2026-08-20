@@ -226,13 +226,9 @@ stg23D_54.c:
 	.text       start:0x0001B320 end:0x0001BDE0
 	.rodata     start:0x000009E0 end:0x00000A30
 
-stg23D_55.c:
-	.text       start:0x0001BDE0 end:0x0001C0D4
-	.rodata     start:0x00000A30 end:0x00000A48
-
-stg23D_56.c:
-	.text       start:0x0001C0D4 end:0x0001C194
-	.rodata     start:0x00000A48 end:0x00000A50
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001BDE0 end:0x0001C194
+	.rodata     start:0x00000A30 end:0x00000A50
 
 stg23D_57.c:
 	.text       start:0x0001C194 end:0x0001CA18

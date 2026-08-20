@@ -174,13 +174,9 @@ stg40D_41.c:
 	.text       start:0x00016F04 end:0x000179C4
 	.rodata     start:0x00000730 end:0x00000780
 
-stg40D_42.c:
-	.text       start:0x000179C4 end:0x00017CB8
-	.rodata     start:0x00000780 end:0x00000798
-
-stg40D_43.c:
-	.text       start:0x00017CB8 end:0x00017D78
-	.rodata     start:0x00000798 end:0x000007A0
+OBJECT/o_chaopipe.c:
+	.text       start:0x000179C4 end:0x00017D78
+	.rodata     start:0x00000780 end:0x000007A0
 
 stg40D_44.c:
 	.text       start:0x00017D78 end:0x000185FC

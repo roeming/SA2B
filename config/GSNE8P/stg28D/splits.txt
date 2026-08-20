@@ -286,13 +286,9 @@ stg28D_69.c:
 	.text       start:0x00023534 end:0x00023FF4
 	.rodata     start:0x00000C58 end:0x00000CA8
 
-stg28D_70.c:
-	.text       start:0x00023FF4 end:0x000242E8
-	.rodata     start:0x00000CA8 end:0x00000CC0
-
-stg28D_71.c:
-	.text       start:0x000242E8 end:0x000243A8
-	.rodata     start:0x00000CC0 end:0x00000CC8
+OBJECT/o_chaopipe.c:
+	.text       start:0x00023FF4 end:0x000243A8
+	.rodata     start:0x00000CA8 end:0x00000CC8
 
 stg28D_72.c:
 	.text       start:0x000243A8 end:0x00024C2C

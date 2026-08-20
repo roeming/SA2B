@@ -214,13 +214,9 @@ stg44D_51.c:
 	.text       start:0x0001AAE4 end:0x0001B5A4
 	.rodata     start:0x000008F0 end:0x00000940
 
-stg44D_52.c:
-	.text       start:0x0001B5A4 end:0x0001B898
-	.rodata     start:0x00000940 end:0x00000958
-
-stg44D_53.c:
-	.text       start:0x0001B898 end:0x0001B958
-	.rodata     start:0x00000958 end:0x00000960
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001B5A4 end:0x0001B958
+	.rodata     start:0x00000940 end:0x00000960
 
 stg44D_54.c:
 	.text       start:0x0001B958 end:0x0001C1DC

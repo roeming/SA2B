@@ -186,13 +186,9 @@ stg53D_44.c:
 	.text       start:0x00016544 end:0x00017004
 	.rodata     start:0x000007A0 end:0x000007F0
 
-stg53D_45.c:
-	.text       start:0x00017004 end:0x000172F8
-	.rodata     start:0x000007F0 end:0x00000808
-
-stg53D_46.c:
-	.text       start:0x000172F8 end:0x000173B8
-	.rodata     start:0x00000808 end:0x00000810
+OBJECT/o_chaopipe.c:
+	.text       start:0x00017004 end:0x000173B8
+	.rodata     start:0x000007F0 end:0x00000810
 
 stg53D_47.c:
 	.text       start:0x000173B8 end:0x00017C3C

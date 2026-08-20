@@ -174,13 +174,9 @@ stg55D_41.c:
 	.text       start:0x00019E38 end:0x0001A8F8
 	.rodata     start:0x00000928 end:0x00000978
 
-stg55D_42.c:
-	.text       start:0x0001A8F8 end:0x0001ABEC
-	.rodata     start:0x00000978 end:0x00000990
-
-stg55D_43.c:
-	.text       start:0x0001ABEC end:0x0001ACAC
-	.rodata     start:0x00000990 end:0x00000998
+OBJECT/o_chaopipe.c:
+	.text       start:0x0001A8F8 end:0x0001ACAC
+	.rodata     start:0x00000978 end:0x00000998
 
 stg55D_44.c:
 	.text       start:0x0001ACAC end:0x0001B530

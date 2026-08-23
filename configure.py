@@ -263,7 +263,7 @@ config.linker_version = "GC/1.3.2"
 # Helper function for Dolphin libraries
 def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
     mw_version = "GC/1.2.5"
-    if lib_name in {"pad", "card", "hio", "OdemuExi2"}:
+    if lib_name in {"pad", "card", "hio", "OdemuExi2", "mtx"}:
         mw_version = "GC/1.2.5n"
     # if version_num in (6, 7) or (lib_name in ("card", "hio", "pad") and version_num == 3) or (lib_name in ("mtx", "pad", "vi") and version_num == 0):  # JPN demo, PAL, and SOMETIMES USA demo
     return {
@@ -352,9 +352,15 @@ config.libs = [
         ],
     ),
     DolphinLib(
+        "odenotstub",
+        [
+            Object(Matching, "Dolphin/odenotstub/odenotstub.c"),
+        ],
+    ),
+    DolphinLib(
         "mtx",
         [
-            Object(NonMatching, "Dolphin/mtx/mtx.c", extra_cflags=["-fp_contract off"]),
+            Object(Matching, "Dolphin/mtx/mtx.c", extra_cflags=["-fp_contract off"]),
             Object(Matching, "Dolphin/mtx/mtxvec.c"),
             Object(Matching, "Dolphin/mtx/mtx44.c"),
             Object(Matching, "Dolphin/mtx/vec.c"),
@@ -457,20 +463,20 @@ config.libs = [
             Object(Matching, "Dolphin/card/CARDNet.c"),
         ],
     ),
-    DolphinLib(
-        "si",
-        [
-            Object(NonMatching, "Dolphin/si/SIBios.c"),
-            Object(NonMatching, "Dolphin/si/SISamplingRate.c"),
-        ],
-    ),
-    DolphinLib(
-        "exi",
-        [
-            Object(NonMatching, "Dolphin/exi/EXIBios.c"),
-            Object(NonMatching, "Dolphin/exi/EXIUart.c"),
-        ],
-    ),
+    # DolphinLib(
+    #     "si",
+    #     [
+    #         Object(NonMatching, "Dolphin/si/SIBios.c"),
+    #         Object(NonMatching, "Dolphin/si/SISamplingRate.c"),
+    #     ],
+    # ),
+    # DolphinLib(
+    #     "exi",
+    #     [
+    #         Object(NonMatching, "Dolphin/exi/EXIBios.c"),
+    #         Object(NonMatching, "Dolphin/exi/EXIUart.c"),
+    #     ],
+    # ),
     DolphinLib(
         "hio",
         [

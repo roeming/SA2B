@@ -631,6 +631,9 @@ Dolphin/OdemuExi2/DebuggerDriver.c:
 Dolphin/card/CARDNet.c:
 	.sdata      start:0x803AD788 end:0x803AD78A
 
+Dolphin/odenotstub/odenotstub.c:
+	.text       start:0x8016C660 end:0x8016C668
+
 Dolphin/card/CARDBios.c:
 	.text       start:0x8016C668 end:0x8016D9B8
 	.data       start:0x801DE420 end:0x801DE440

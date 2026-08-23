@@ -88,24 +88,22 @@ void C_MTXCopy(const Mtx src, Mtx dst)
  * @TODO: Documentation
  * @note UNUSED Size: 000034 (Matching by size)
  */
-void PSMTXCopy(register const Mtx src, register Mtx dst)
-{
-#ifdef __MWERKS__
-	asm {
-		psq_l   fp0, 0x0000 (src), 0, 0
-		psq_st  fp0, 0x0000 (dst), 0, 0
-		psq_l   fp1, 0x0008 (src), 0, 0
-		psq_st  fp1, 0x0008 (dst), 0, 0
-		psq_l   fp2, 0x0010 (src), 0, 0
-		psq_st  fp2, 0x0010 (dst), 0, 0
-		psq_l   fp3, 0x0018 (src), 0, 0
-		psq_st  fp3, 0x0018 (dst), 0, 0
-		psq_l   fp4, 0x0020 (src), 0, 0
-		psq_st  fp4, 0x0020 (dst), 0, 0
-		psq_l   fp5, 0x0028 (src), 0, 0
-		psq_st  fp5, 0x0028 (dst), 0, 0
-	}
-#endif
+ ASM void PSMTXCopy(register const Mtx src, register Mtx dst)
+ {
+	#ifdef __MWERKS__
+	psq_l   fp0, 0x0000 (src), 0, 0
+	psq_st  fp0, 0x0000 (dst), 0, 0
+	psq_l   fp1, 0x0008 (src), 0, 0
+	psq_st  fp1, 0x0008 (dst), 0, 0
+	psq_l   fp2, 0x0010 (src), 0, 0
+	psq_st  fp2, 0x0010 (dst), 0, 0
+	psq_l   fp3, 0x0018 (src), 0, 0
+	psq_st  fp3, 0x0018 (dst), 0, 0
+	psq_l   fp4, 0x0020 (src), 0, 0
+	psq_st  fp4, 0x0020 (dst), 0, 0
+	psq_l   fp5, 0x0028 (src), 0, 0
+	psq_st  fp5, 0x0028 (dst), 0, 0	
+	#endif
 }
 
 /**

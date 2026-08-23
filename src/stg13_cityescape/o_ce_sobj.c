@@ -28,8 +28,7 @@ typedef void (*_18_exec_type)(task*, taskwk*, struct ObjectCeSobj_t*);
 
 typedef struct ObjectCeSobj_t{
   /* 0x00 */ s32 _00;
-  /* 0x04 */ u32 _04;
-  /* 0x08 */ u32 _08;
+  artificial_padding(0, 0xc, s32);
   /* 0x0C */ CCL_INFO *coll;
   /* 0x10 */ u32 collCount;
   /* 0x14 */ task_exec disp;

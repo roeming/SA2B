@@ -17,20 +17,20 @@
 /************************/
 typedef struct
 {
-    Sint8      kind;
-    Uint8      form;
-    Sint8      push;
-    Sint8      damage;
-    Uint32     attr;
-    NJS_POINT3 center;
-    Float        a;
-    Float        b;
-    Float        c;
-    Float        d;
-    Sint32       angx;
-    Sint32       angy;
-    Sint32       angz;
+    /*0x00*/ Sint8      kind;
+    /*0x01*/ Uint8      form;
+    /*0x02*/ Sint8      push;
+    /*0x03*/ Sint8      damage;
+    /*0x04*/ Uint32     attr;
+    /*0x08*/ NJS_POINT3 center;
+    /*0x14*/ Float        a;
+    /*0x18*/ Float        b;
+    /*0x1C*/ Float        c;
+    /*0x20*/ Float        d;
+    /*0x24*/ Sint32       angx;
+    /*0x28*/ Sint32       angy;
+    /*0x2C*/ Sint32       angz;
 }
-CCL_INFO;
+CCL_INFO; // size: 0x30
 
 #endif/*_SA2B_CCOLLI_INFO_H_*/

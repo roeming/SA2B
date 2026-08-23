@@ -35,7 +35,7 @@ typedef struct colliwk              colliwk; /* collision work                  
     Angle3      ang;                /* 0x08 task angle                                               */ \
     NJS_POINT3  pos;                /* 0x14 task position                                            */ \
     NJS_VECTOR  scl;                /* 0x20 task scale                                               */ \
-    colliwk*    cwp;                /* 0x24 collision work pointer                                   */ \
+    colliwk*    cwp;                /* 0x2C collision work pointer                                   */ \
 }
 
 /****** Work ************************************************************************************/

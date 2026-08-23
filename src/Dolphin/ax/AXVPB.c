@@ -17,17 +17,17 @@ static u32 __AXMixCycles[32] = {
     0x00000B7C,
     0x0000113A,
     0x000008B6,
-    0x00000E74,
-    0x00000E74,
-    0x00001432,
+    0x0000116c,
+    0x0000116c,
+    0x00001a22,
     0x000009A6,
     0x0000134C,
     0x0000134C,
     0x00001CF2,
     0x00000E97,
-    0x0000183D,
-    0x0000183D,
-    0x000021E3,
+    0x00001d2e,
+    0x00001d2e,
+    0x00002bc5,
     0x00000B7C,
     0x00001432,
     0x00000B7C,
@@ -70,6 +70,20 @@ static u32 __AXNumVoices;
     for (i = 0; i < size / 2; i++){ \
         p[i] = 0; \
     } \
+}
+
+inline void BZERO_20(void *dst, int fill, u32 count)
+{
+    int i;
+    int j;
+    u32 *p = (u32 *)dst;
+
+    for (i = 0; i < count / 0x20; i++) {
+        for (j = 0; j < 8; j++) {
+            p[0] = fill;
+            p++;
+        }
+    }
 }
 
 u32 __AXGetNumVoices(void) {

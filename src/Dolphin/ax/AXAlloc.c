@@ -55,6 +55,7 @@ void __AXAllocQuit(void) {
 void __AXPushFreeStack(AXVPB * p) {
     p->next = __AXStackHead[0];
     __AXStackHead[0] = p;
+    p->priority = 0;
 }
 
 AXVPB * __AXPopFreeStack(void) {

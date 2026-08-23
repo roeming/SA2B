@@ -2,6 +2,7 @@
 #include <Dolphin/ax.h>
 #include <Dolphin/axfx.h>
 #include "dolphin/__axfx.h"
+#include "math.h"
 #define NULL 0
 
 // functions

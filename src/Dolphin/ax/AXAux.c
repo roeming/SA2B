@@ -50,7 +50,7 @@ void __AXAuxQuit(void) {
 }
 
 void __AXGetAuxAInput(u32 * p) {
-  if (__AXAuxDspReadPosition){
+  if (__AXCallbackAuxA){
     *p = (u32)&__AXBufferAuxA[__AXAuxDspWritePosition][0];
     return;
   }
@@ -62,7 +62,7 @@ void __AXGetAuxAOutput(u32 * p) {
 }
 
 void __AXGetAuxBInput(u32 *p) {
-  if (__AXAuxDspReadPosition) {
+  if (__AXCallbackAuxA) {
     *p = (u32)&__AXBufferAuxB[__AXAuxDspWritePosition][0];
     return;
   }

@@ -263,7 +263,7 @@ config.linker_version = "GC/1.3.2"
 # Helper function for Dolphin libraries
 def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
     mw_version = "GC/1.2.5"
-    if lib_name in {"pad", "card", "hio"}:
+    if lib_name in {"pad", "card", "hio", "OdemuExi2"}:
         mw_version = "GC/1.2.5n"
     # if version_num in (6, 7) or (lib_name in ("card", "hio", "pad") and version_num == 3) or (lib_name in ("mtx", "pad", "vi") and version_num == 0):  # JPN demo, PAL, and SOMETIMES USA demo
     return {
@@ -346,6 +346,12 @@ config.libs = [
         ],
     ),
     DolphinLib(
+        "OdemuExi2",
+        [
+            Object(Matching, "Dolphin/OdemuExi2/DebuggerDriver.c", extra_cflags=["-inline deferred"]),
+        ],
+    ),
+    DolphinLib(
         "mtx",
         [
             Object(NonMatching, "Dolphin/mtx/mtx.c", extra_cflags=["-fp_contract off"]),
@@ -388,14 +394,14 @@ config.libs = [
         "ax",
         [
             Object(Matching, "Dolphin/ax/AX.c"),
-            Object(NonMatching, "Dolphin/ax/AXAlloc.c"),
-            Object(NonMatching, "Dolphin/ax/AXAux.c"),
-            Object(NonMatching, "Dolphin/ax/AXCL.c"),
+            Object(Matching, "Dolphin/ax/AXAlloc.c"),
+            Object(Matching, "Dolphin/ax/AXAux.c"),
+            Object(Matching, "Dolphin/ax/AXCL.c"),
             Object(NonMatching, "Dolphin/ax/AXOut.c"),
-            Object(NonMatching, "Dolphin/ax/AXProf.c"),
+            Object(Matching, "Dolphin/ax/AXProf.c"),
             Object(Matching, "Dolphin/ax/AXSPB.c"),
             Object(NonMatching, "Dolphin/ax/AXVPB.c"),
-            Object(NonMatching, "Dolphin/ax/DSPCode.c"),
+            Object(Matching, "Dolphin/ax/DSPCode.c"),
         ],
     ),
         DolphinLib(
@@ -407,12 +413,12 @@ config.libs = [
     DolphinLib(
         "axfx",
         [
-            Object(NonMatching, "Dolphin/axfx/axfx.c"),
-            Object(NonMatching, "Dolphin/axfx/chorus.c"),
-            Object(NonMatching, "Dolphin/axfx/delay.c"),
-            Object(NonMatching, "Dolphin/axfx/reverb_hi.c"),
-            Object(NonMatching, "Dolphin/axfx/reverb_hi_4ch.c"),
-            Object(NonMatching, "Dolphin/axfx/reverb_std.c"),
+            Object(Matching, "Dolphin/axfx/axfx.c"),
+            Object(Matching, "Dolphin/axfx/chorus.c"),
+            Object(Matching, "Dolphin/axfx/delay.c"),
+            Object(Matching, "Dolphin/axfx/reverb_hi.c", extra_cflags=["-fp_contract off"]),
+            # Object(NonMatching, "Dolphin/axfx/reverb_hi_4ch.c"),
+            Object(Matching, "Dolphin/axfx/reverb_std.c", extra_cflags=["-fp_contract off"]),
         ],
     ),
     DolphinLib(

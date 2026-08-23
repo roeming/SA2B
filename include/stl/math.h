@@ -46,6 +46,7 @@ f64 ldexp(f64, int);
 f64 sqrt(f64);
 
 f64 pow(f64, f64);
+f32 powf(f32, f32);
 f64 log(f64);
 f64 log10(f64);
 f64 fmod(f64, f64);

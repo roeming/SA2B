@@ -41,6 +41,8 @@ f32 atan2f(f32, f32);
 
 f64 ceil(f64);
 f64 floor(f64);
+f32 ceilf(f32);
+f32 floorf(f32);
 f64 frexp(f64, int*);
 f64 ldexp(f64, int);
 f64 sqrt(f64);

@@ -13,9 +13,9 @@ ChaoMain_1.c:
 	.text       start:0x00000468 end:0x00000554
 
 ChaoMain_2.c:
-	.text       start:0x00000AA0 end:0x00001B0C
+	.text       start:0x00000AA0 end:0x00001B7C
 
-ChaoMain_3.c:
+chao/al_camera.c:
 	.text       start:0x00001B7C end:0x0000255C
 
 ChaoMain_4.c:
@@ -129,7 +129,7 @@ ChaoMain_40.c:
 ChaoMain_41.c:
 	.text       start:0x00018CE4 end:0x00019C70
 
-ChaoMain_42.c:
+chao/al_misc.c:
 	.text       start:0x00019C70 end:0x0001AE88
 
 ChaoMain_43.c:

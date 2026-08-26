@@ -10,55 +10,62 @@ BEGIN_SCOPE_EXTERN_C
 // int __signbitd(f64);
 // int __fpclassifyd(f64);
 
-inline int __fpclassifyf(f32 x)
+#define FP_SUBNORMAL 5
+#define FP_NORMAL 4
+#define FP_ZERO 3
+#define FP_INFINITE 2
+#define FP_NAN 1
+
+static inline int __fpclassifyf(f32 x)
 {
 	switch ((*(s32*)&x) & 0x7f800000) {
 	case 0x7f800000:
 	{
 		if ((*(s32*)&x) & 0x007fffff)
-			return 1;
+			return FP_NAN;
 		else
-			return 2;
+			return FP_INFINITE;
 		break;
 	}
 	case 0:
 	{
 		if ((*(s32*)&x) & 0x007fffff)
-			return 5;
+			return FP_SUBNORMAL;
 		else
-			return 3;
+			return FP_ZERO;
 		break;
 	}
 	}
-	return 4;
+	return FP_NORMAL;
 }
-inline int __fpclassifyd(f64 x)
+
+static inline int __fpclassifyd(f64 x)
 {
 	switch (__HI(x) & 0x7ff00000) {
 	case 0x7ff00000:
 	{
 		if ((__HI(x) & 0x000fffff) || (__LO(x) & 0xffffffff))
-			return 1;
+			return FP_NAN;
 		else
-			return 2;
+			return FP_INFINITE;
 		break;
 	}
 	case 0:
 	{
 		if ((__HI(x) & 0x000fffff) || (__LO(x) & 0xffffffff))
-			return 5;
+			return FP_SUBNORMAL;
 		else
-			return 3;
+			return FP_ZERO;
 		break;
 	}
 	}
-	return 4;
+	return FP_NORMAL;
 }
 
 #define fpclassify(x) ((sizeof(x) == sizeof(f32)) ? __fpclassifyf((f32)(x)) : __fpclassifyd((f64)(x)))
 
-#define isinf(x)    ((fpclassify(x) == 2))
-#define isfinite(x) ((fpclassify(x) > 2))
+#define isinf(x)    ((fpclassify(x) == FP_INFINITE))
+#define isfinite(x) ((fpclassify(x) > FP_INFINITE))
 
 END_SCOPE_EXTERN_C
 

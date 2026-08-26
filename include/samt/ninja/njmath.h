@@ -140,6 +140,13 @@ void    njKochanekSpline(Float* idata, Float* odata, NJS_SPLINE* attr, Float fra
 void    njCubicBezierSpline(Float* idata, Float* odata, NJS_SPLINE* attr, Float frame);
 void    njBezierSpline(Float* idata, Float* odata, NJS_SPLINE* attr, Float frame);
 
+typedef struct {
+  Float sinValue;
+  Float cosValue;
+} _njSinCosCache;
+
+extern _njSinCosCache njSinCosTbl[];
+
 EXTERN_END
 
 #endif/*H_NJ_MATH*/

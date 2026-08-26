@@ -315,7 +315,7 @@ stg13D_77.c:
 	.rodata     start:0x00001018 end:0x00001060
 
 OBJECT/o_ring.c:
-	.text       start:0x0003E038 end:0x000402F4
+	.text       start:0x0003E038 end:0x0004031C
 	.rodata     start:0x00001060 end:0x000010F8
 
 stg13D_79.c:

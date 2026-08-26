@@ -242,6 +242,18 @@ cflags_runtime = [
     "-inline auto",
 ]
 
+cflags_dol = [
+    *cflags_base,
+    "-opt nopeep",
+    "-opt noschedule",
+    "-pool off",
+    "-inline off",
+    # "-inline deferred",
+    "-fp_contract off",
+    "-use_lmw_stmw off",
+    "-sym on"
+]
+
 # REL flags
 cflags_rel = [
     *cflags_base,
@@ -276,14 +288,14 @@ def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
 
 
 # Helper function for REL script objects
-def Rel(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
+def Rel(lib_name: str, objects: List[Object], **kwargs) -> Dict[str, Any]:
     return {
         "lib": lib_name,
         "mw_version": "GC/1.2.5",
         "cflags": cflags_rel,
         "progress_category": "game",
         "objects": objects,
-    }
+    } | kwargs
 
 
 Matching = True                   # Object matches and should be linked
@@ -301,6 +313,7 @@ config.warn_missing_source = False
 
 CHAOPIPE_C = Object(Matching, "OBJECT/o_chaopipe.c")
 SPRING_C = Object(Matching, "OBJECT/o_spring.c")
+RING_C = Object(NonMatching, "OBJECT/o_ring.c")
 
 config.libs = [
     DolphinLib(
@@ -620,6 +633,18 @@ config.libs = [
             Object(Matching, "Dolphin/TRK_MINNOW_DOLPHIN/targcont.c"),
         ],
     },
+    {
+        "lib": "Ninja",
+        "mw_version": "GC/1.2.5",
+        "cflags": cflags_dol,
+        "objects": [
+            Object(Matching, "Ninja/njCubicBezier.c"),
+            Object(Matching, "Ninja/njFraction.c"),
+            Object(Matching, "Ninja/njRoundOff.c"),
+            Object(Matching, "Ninja/njRoundUp.c"),
+            Object(Matching, "Ninja/njSinCos.c"),
+        ],
+    },
     Rel(
         "stg13D",
         [
@@ -629,11 +654,15 @@ config.libs = [
             Object(NonMatching, "stg13_cityescape/o_ce_sobj.c"),
             CHAOPIPE_C,
             SPRING_C,
+            RING_C,
         ]
     ),
     Rel(
         "ChaoMain",
-        []
+        [
+            Object(NonMatching, "chao/al_garden_info.c")
+        ],
+        extra_cflags = ["-inline deferred"]
     )
 ]
 

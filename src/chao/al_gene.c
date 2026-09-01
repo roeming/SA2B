@@ -24,11 +24,11 @@ extern BOOL AL_IsDark(u8 type);
 // ^ extern
 // v in this file
 
-#define INLINE_BZERO(p, size)                                                  \
-  {                                                                            \
-    int i;                                                                     \
-    for (i = 0; i < (size); i++)                                               \
-      ((u8 *)(p))[i] = 0;                                                      \
+#define INLINE_BZERO(p, size)    \
+  {                              \
+    int i;                       \
+    for (i = 0; i < (size); i++) \
+      ((u8 *)(p))[i] = 0;        \
   }
 
 #define RAND_RANGE(maxVal)  (njRandom() * (maxVal))
@@ -211,8 +211,7 @@ void AL_GeneCreateGBAEgg(AL_GENE *pGene, CHAO_PARAM_GC *pParam) {
       if (pGene->Abl[ind][0] < AL_MAX_SKILL) {
         pGene->Abl[ind][0]++;
         pGene->Abl[ind][1]++;
-        i++;
-        if (i >= 14)
+        if (++i >= 14)
           break;
       }
     }
@@ -229,13 +228,11 @@ void AL_GeneCreateGBAEgg(AL_GENE *pGene, CHAO_PARAM_GC *pParam) {
   for (i = 0; i < ARRAY_SIZE(pGene->APos); i++) {
     pGene->APos[i] = 0;
   }
-  {
-    // int i;
-    for (i = 0; i < ARRAY_COUNT(pGene->Personality); i++) {
-      pGene->Personality[i][0] = RAND_U32(5);
-      pGene->Personality[i][1] = RAND_U32(5);
-    }
+  for (i = 0; i < ARRAY_COUNT(pGene->Personality); i++) {
+    pGene->Personality[i][0] = RAND_U32(5);
+    pGene->Personality[i][1] = RAND_U32(5);
   }
+
   pGene->Taste[0] = RAND_U32(6);
   pGene->Taste[1] = RAND_U32(6);
   pGene->Tv[0] = RAND_U32(6);
@@ -279,8 +276,10 @@ void AL_EmotionStateInit(AL_EMOTION *pEmotion) {
   pEmotion->State[EM_ST_HUNGER] = 3000 + (u32)RAND_RANGE(6000.0f);
   pEmotion->State[EM_ST_BREED] = RAND_U32(1000);
   pEmotion->State[EM_ST_TEDIOUS] = (u32)RAND_RANGE(5000.0f);
-  pEmotion->State[EM_ST_LONELY] = RAND_U32(
-      0); // bug? multiplies by -0.0001, should always round to 0, but weird
+  
+  // bug? multiplies by -0.0001, should always round to 0, but weird
+  pEmotion->State[EM_ST_LONELY] = RAND_U32(0);
+
   pEmotion->State[EM_ST_TIRE] = (u32)RAND_RANGE(8000.0f);
   pEmotion->State[EM_ST_STRESS] = 0;
   pEmotion->State[EM_ST_THIRSTY] = 0;
@@ -301,7 +300,7 @@ void AL_SucceedGeneParam(AL_GENE *pGene, CHAO_PARAM_GC *pParam) {
 
   for (i = 0; i < NB_G_PER; i++) {
     pGene->Personality[i][RAND_BOOL()] =
-        2 + (pParam->emotion.Personality[i] / 40);
+        (pParam->emotion.Personality[i] / 40) + 2;
   }
 
   pParam->PartsBTL.MinimalFlag = 0;
@@ -313,8 +312,8 @@ void AL_SucceedGeneParam(AL_GENE *pGene, CHAO_PARAM_GC *pParam) {
 
   {
     AL_EMOTION *emot = &pParam->emotion;
-    // @BUG, this should be indexed by i
     for (i = 0; i < ARRAY_COUNT(emot->Mood); i++) {
+      // @BUG, this should be indexed by i
       emot->Mood[8] = 0;
     }
     AL_EmotionStateInit(emot);
@@ -401,8 +400,8 @@ void AL_GrowGeneParam(AL_GENE *pGene, CHAO_PARAM_GC *pParam) {
 }
 
 void AL_BlendGene(AL_GENE *pSrcGene1, AL_GENE *pSrcGene2, AL_GENE *pDstGene) {
-#define BLEND(dst, src1, src2, field)                                          \
-  (dst)->field[0] = (src1)->field[RAND_BOOL()];                                \
+#define BLEND(dst, src1, src2, field)           \
+  (dst)->field[0] = (src1)->field[RAND_BOOL()]; \
   (dst)->field[1] = (src2)->field[RAND_BOOL()]
 
   int i;
@@ -449,7 +448,7 @@ void AL_GeneAnalyzeCommon(AL_GENE *pGene, CHAO_PARAM_GC *pParam) {
   int i;
 
   pGene->IsAnalyzed = TRUE;
-  pParam->type = 2;
+  pParam->type = TYPE_CHILD;
   pParam->ClassNum = -1;
   {
     GARDEN_ID *info = _rename_AL_GetCurrGarden();

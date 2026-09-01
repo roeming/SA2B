@@ -69,7 +69,7 @@ eAL_LTOY;
 /************************/
 typedef struct
 {
-    int32_t id[2];
+    uint id[2];
 }
 GARDEN_ID;
 

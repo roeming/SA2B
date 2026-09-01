@@ -6,6 +6,7 @@
 #include "samt/sonic/chao/al_emotion.h"
 #include "samt/sonic/chao/al_garden_info.h"
 #include "samt/sonic/chao/al_global.h"
+#include "samt/sonic/chao/chao.h"
 
 extern u8 eye_default_num[3][3][3];
 extern u8 mouse_default_num[3][3][3];
@@ -17,15 +18,10 @@ extern GARDEN_ID *_rename_AL_GetCurrGarden();
 extern CHAO_GARDEN_INFO *AL_GetGardenInfo();
 extern BOOL AL_IsHero(u8 type);
 extern BOOL AL_IsDark(u8 type);
+#define njRandom() (rand() * (1.f / 32768.f))
 
 // ^ extern
 // v in this file
-
-// @TODO: fakematch
-typedef struct {
-  u8 pad[0x5c];
-  CHAO_PARAM_GC *_5c;
-} fakeP;
 
 #define INLINE_BZERO(p, size)                                                  \
   {                                                                            \
@@ -34,7 +30,6 @@ typedef struct {
       ((u8 *)(p))[i] = 0;                                                      \
   }
 
-#define njRandom() (rand() * (1.f / 32768.f))
 #define RAND_RANGE(maxVal) (njRandom() * (maxVal))
 #define RAND_S32(maxIndex) (s32)(RAND_RANGE((maxIndex) - 1e-4f))
 #define RAND_U32(maxIndex) (u32)(RAND_RANGE((maxIndex) - 1e-4f))
@@ -440,8 +435,8 @@ void AL_CreateChildGene(task *pMotherTask, task *pFatherTask,
   // fake? this is a crazy amount of stack padding
   u8 pad[0x9C0];
 
-  AL_GENE *motherParam = &((fakeP *)pMotherTask->twp)->_5c->gene;
-  AL_GENE *fatherParam = &((fakeP *)pFatherTask->twp)->_5c->gene;
+  AL_GENE *motherParam = &GET_CHAOWK(pMotherTask)->pParamGC->gene;
+  AL_GENE *fatherParam = &GET_CHAOWK(pFatherTask)->pParamGC->gene;
   AL_GENE mother = *motherParam;
   AL_GENE father = *fatherParam;
   AL_BlendGene(&mother, &father, pChildGene);
@@ -689,7 +684,7 @@ void AL_GeneAnalyze2(AL_GENE *pGene, CHAO_PARAM_GC *pParam) {
 }
 
 void AL_GeneAnalyze(task *tp) {
-  CHAO_PARAM_GC *pParam = ((fakeP *)tp->twp)->_5c;
+  CHAO_PARAM_GC *pParam = GET_CHAOWK(tp)->pParamGC;
   AL_GENE *pGene = &pParam->gene;
 
   pParam->place = AL_GetStageNumber();

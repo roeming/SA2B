@@ -18,7 +18,8 @@ extern GARDEN_ID *_rename_AL_GetCurrGarden();
 extern CHAO_GARDEN_INFO *AL_GetGardenInfo();
 extern BOOL AL_IsHero(u8 type);
 extern BOOL AL_IsDark(u8 type);
-#define njRandom() (rand() * (1.f / 32768.f))
+
+#define njRandom() (rand() * (1.f / (RAND_MAX + 1)))
 
 // ^ extern
 // v in this file
@@ -30,10 +31,10 @@ extern BOOL AL_IsDark(u8 type);
       ((u8 *)(p))[i] = 0;                                                      \
   }
 
-#define RAND_RANGE(maxVal) (njRandom() * (maxVal))
-#define RAND_S32(maxIndex) (s32)(RAND_RANGE((maxIndex) - 1e-4f))
-#define RAND_U32(maxIndex) (u32)(RAND_RANGE((maxIndex) - 1e-4f))
-#define RAND_BOOL() (int)RAND_RANGE(1.99f)
+#define RAND_RANGE(maxVal)  (njRandom() * (maxVal))
+#define RAND_S32(maxIndex)  (s32)(RAND_RANGE((maxIndex) - 1e-4f))
+#define RAND_U32(maxIndex)  (u32)(RAND_RANGE((maxIndex) - 1e-4f))
+#define RAND_BOOL()         (int)RAND_RANGE(1.99f)
 
 void AL_GeneCreatePlane(AL_GENE *pGene) {
   AL_GeneCreate(pGene);

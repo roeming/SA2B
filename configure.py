@@ -289,13 +289,30 @@ def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
 
 # Helper function for REL script objects
 def Rel(lib_name: str, objects: List[Object], **kwargs) -> Dict[str, Any]:
+    flags = cflags_rel
+    if "extra_cflags" in kwargs:
+        flags = cflags_rel + kwargs["extra_cflags"]
     return {
         "lib": lib_name,
         "mw_version": "GC/1.2.5",
-        "cflags": cflags_rel,
+        "cflags": flags,
         "progress_category": "game",
         "objects": objects,
-    } | kwargs
+    }
+def ChaoRel(lib_name: str, objects: List[Object], **kwargs) -> Dict[str, Any]:
+    return {
+        "lib": lib_name,
+        "mw_version": "GC/1.2.5n",
+        "cflags": cflags_rel + [
+            "-inline deferred",
+            "-opt schedule",
+            "-opt peep",
+            "-pool on",
+            "-use_lmw_stmw on",
+        ],
+        "progress_category": "game",
+        "objects": objects,
+    }
 
 
 Matching = True                   # Object matches and should be linked
@@ -657,12 +674,12 @@ config.libs = [
             RING_C,
         ]
     ),
-    Rel(
+    ChaoRel(
         "ChaoMain",
         [
-            Object(NonMatching, "chao/al_garden_info.c")
-        ],
-        extra_cflags = ["-inline deferred"]
+            Object(NonMatching, "chao/al_garden_info.c"),
+            Object(Matching, "chao/al_gene.c"),
+        ]
     )
 ]
 

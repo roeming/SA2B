@@ -23,6 +23,9 @@
 /** Colli Info **/
 #include <samt/sonic/c_colli/ccl_info.h>
 
+
+#include <samt/sonic/chao/al_garden_info.h>
+
 /************************/
 /*  Abstract Types      */
 /************************/
@@ -42,21 +45,21 @@ typedef int32_t (*BHV_FUNC)(task *);
 /************************/
 typedef enum
 {
-    AL_COLOR_NORMAL,
-    AL_COLOR_YELLOW,
-    AL_COLOR_WHITE,
-    AL_COLOR_BROWN,
-    AL_COLOR_SKYBLUE,
-    AL_COLOR_PINK,
-    AL_COLOR_BLUE,
-    AL_COLOR_GRAY,
-    AL_COLOR_GREEN,
-    AL_COLOR_RED,
-    AL_COLOR_APPLEGREEN,
-    AL_COLOR_PURPLE,
-    AL_COLOR_ORANGE,
-    AL_COLOR_BLACK,
-    NB_AL_COLOR,
+    AL_COLOR_NORMAL     = 0x0,
+    AL_COLOR_YELLOW     = 0x1,
+    AL_COLOR_WHITE      = 0x2,
+    AL_COLOR_BROWN      = 0x3,
+    AL_COLOR_SKYBLUE    = 0x4,
+    AL_COLOR_PINK       = 0x5,
+    AL_COLOR_BLUE       = 0x6,
+    AL_COLOR_GRAY       = 0x7,
+    AL_COLOR_GREEN      = 0x8,
+    AL_COLOR_RED        = 0x9,
+    AL_COLOR_APPLEGREEN = 0xA,
+    AL_COLOR_PURPLE     = 0xB,
+    AL_COLOR_ORANGE     = 0xC,
+    AL_COLOR_BLACK      = 0xD,
+    NB_AL_COLOR         = 0xE,
 }
 eAL_COLOR;
 
@@ -92,39 +95,6 @@ typedef enum
     NB_AL_ILLNESS,
 }
 eAL_ILLNESS;
-
-enum
-{
-    TYPE_NONE,
-    TYPE_EGG,
-    TYPE_CHILD,
-    TYPE_DUMMY1,
-    TYPE_DUMMY2,
-    TYPE_N_NORMAL,
-    TYPE_H_NORMAL,
-    TYPE_D_NORMAL,
-    TYPE_N_SWIM,
-    TYPE_H_SWIM,
-    TYPE_D_SWIM,
-    TYPE_N_FLY,
-    TYPE_H_FLY,
-    TYPE_D_FLY,
-    TYPE_N_RUN,
-    TYPE_H_RUN,
-    TYPE_D_RUN,
-    TYPE_N_POWER,
-    TYPE_H_POWER,
-    TYPE_D_POWER,
-    TYPE_N_CHAOS,
-    TYPE_H_CHAOS,
-    TYPE_D_CHAOS,
-    TYPE_TAILS,
-    TYPE_KNUCKLES,
-    TYPE_AMY,
-    TYPE_MINIMAL,
-    TYPE_OMOCHAO,
-    TYPE_EGG_FOOT,
-};
 
 typedef enum /* Toolkit addition */
 {

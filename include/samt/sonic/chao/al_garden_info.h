@@ -149,7 +149,7 @@ KARATE_SAVE_INFO;
 
 typedef struct chao_garden_info
 {
-    uint8_t padding[4];
+    int padding;
     GARDEN_ID GardenID;
     int32_t flag;
     int32_t ToyGetFlag;

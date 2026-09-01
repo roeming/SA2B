@@ -217,6 +217,7 @@ enum { false, true };
 
 // Flag manipulation macros
 #define ARRAY_SIZE(o)        (sizeof((o)) / sizeof(*(o)))   // Array size define
+#define ARRAY_COUNT(o)       (int)ARRAY_SIZE(o)   // Array size define
 #define ALIGN_PREV(X, N)     ((X) & ~((N) - 1))             // Align X to the previous N bytes (N must be power of two)
 #define ALIGN_NEXT(X, N)     ALIGN_PREV(((X) + (N) - 1), N) // Align X to the next N bytes (N must be power of two)
 #define IS_NOT_ALIGNED(X, N) (((X) & ((N) - 1)) != 0)       // True if X is not aligned to N bytes, else false

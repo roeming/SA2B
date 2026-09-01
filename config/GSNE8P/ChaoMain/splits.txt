@@ -21,7 +21,7 @@ chao/al_camera.c:
 ChaoMain_4.c:
 	.text       start:0x0000265C end:0x00003384
 
-ChaoMain_6.c:
+chao/al_collision.c:
 	.text       start:0x00003500 end:0x0000392C
 
 ChaoMain_7.c:
@@ -81,8 +81,9 @@ ChaoMain_23.c:
 ChaoMain_24.c:
 	.text       start:0x0000FEC8 end:0x0000FF60
 
-ChaoMain_25.c:
-	.text       start:0x0001002C end:0x000127A0
+chao/al_gene.c:
+	.text       start:0x0000FF60 end:0x000127A0
+	.rodata     start:0x00000EF0 end:0x00000F70
 
 ChaoMain_26.c:
 	.text       start:0x000127A0 end:0x00012B08

@@ -9,7 +9,7 @@ void AL_GeneCreate(AL_GENE *pGene);
 
 void AL_GeneCreateGBA(AL_GENE *pGene, CHAO_PARAM_GC *pParam);
 
-void AL_GeneCreateGBAEgg();
+void AL_GeneCreateGBAEgg(AL_GENE *pGene, CHAO_PARAM_GC *pParam);
 
 void AL_GeneCreate_Light(AL_GENE *pGene);
 

@@ -187,10 +187,10 @@ void ObjectBoardDisp(task *tp) {
         }
       }
     }
-    fn_8002B2E8(0x2400);
+    OnControl3D(0x2400);
     njSetMatrix(NULL, &lbl_13_bss_0);
     fn_8011E244(&lbl_13_data_106534);
-    fn_8002B2D8(0x2400);
+    OffControl3D(0x2400);
     njPopMatrixEx();
     fn_8011C3A0(0);
   }

@@ -1,12 +1,12 @@
 #include "chao/al_gene.h"
-#include "Dolphin/os.h"
-#include "PowerPC_EABI_Support\MSL_C\MSL_Common\rand.h"
 #include "math.h"
+#include "Dolphin/os.h"
 #include "samt/sonic/chao/al_egg.h"
 #include "samt/sonic/chao/al_emotion.h"
 #include "samt/sonic/chao/al_garden_info.h"
 #include "samt/sonic/chao/al_global.h"
 #include "samt/sonic/chao/chao.h"
+#include "samt/ninja/ninja.h"
 
 extern u8 eye_default_num[3][3][3];
 extern u8 mouse_default_num[3][3][3];
@@ -18,8 +18,6 @@ extern GARDEN_ID *_rename_AL_GetCurrGarden();
 extern CHAO_GARDEN_INFO *AL_GetGardenInfo();
 extern BOOL AL_IsHero(u8 type);
 extern BOOL AL_IsDark(u8 type);
-
-#define njRandom() (rand() * (1.f / (RAND_MAX + 1)))
 
 // ^ extern
 // v in this file
@@ -257,12 +255,12 @@ void AL_GeneCreateGBAEgg(AL_GENE *pGene, CHAO_PARAM_GC *pParam) {
 
 void AL_GeneCreate_Hero(AL_GENE *pGene) {
   AL_GeneCreate(pGene);
-  pGene->APos[1] = pGene->APos[0] = AL_MAX_SKILL;
+  pGene->APos[1] = pGene->APos[0] = 5;
 }
 
 void AL_GeneCreate_Dark(AL_GENE *pGene) {
   AL_GeneCreate(pGene);
-  pGene->APos[1] = pGene->APos[0] = AL_MIN_SKILL;
+  pGene->APos[1] = pGene->APos[0] = -5;
 }
 
 void AL_EmotionStateInit(AL_EMOTION *pEmotion) {

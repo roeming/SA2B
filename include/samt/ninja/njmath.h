@@ -14,6 +14,7 @@ EXTERN_START
 /********************************/
 /****** System **********************************************************************************/
 #include <samt/shinobi/sg_xpt.h>
+#include "PowerPC_EABI_Support\MSL_C\MSL_Common\rand.h"
 
 /****** Std *************************************************************************************/
 // #include <math.h>
@@ -83,7 +84,9 @@ NJS_SPLINE;
 *   Description:
 *     Get a random value between '0.f' and just below '1.f'.
 */
-Float   njRandom( void );
+// Float   njRandom( void );
+#define njRandom() (rand() * (1.f / (RAND_MAX + 1)))
+
 /*
 *   Description:
 *     Set random seed.
@@ -92,6 +95,7 @@ Float   njRandom( void );
 *     - n           : seed
 */
 void    njRandomSeed( Uint32 n );
+
 
 /****** Round ***********************************************************************************/
 /*

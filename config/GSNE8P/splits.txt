@@ -10,6 +10,9 @@ Sections:
 	.sbss       type:bss align:32
 	.sdata2     type:rodata align:16
 
+chao/adv2/adv2_move.c:
+	.text       start:0x8002D8E0 end:0x8002F628
+
 Dolphin/base/PPCArch.c:
 	.text       start:0x800E3494 end:0x800E34F8
 

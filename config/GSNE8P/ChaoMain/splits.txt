@@ -9,8 +9,8 @@ Sections:
 ChaoMain_0.c:
 	.text       start:0x00000000 end:0x000000F8
 
-ChaoMain_1.c:
-	.text       start:0x00000468 end:0x00000554
+chao/al_behavior.c:
+	.text       start:0x000000F8 end:0x00000A24
 
 ChaoMain_2.c:
 	.text       start:0x00000AA0 end:0x00001B7C
@@ -85,11 +85,11 @@ chao/al_gene.c:
 	.text       start:0x0000FF60 end:0x000127A0
 	.rodata     start:0x00000EF0 end:0x00000F70
 
-ChaoMain_26.c:
+chao/al_hold.c:
 	.text       start:0x000127A0 end:0x00012B08
 
-ChaoMain_28.c:
-	.text       start:0x00012B8C end:0x00014C48
+chao/al_icon.c:
+	.text       start:0x00012B08 end:0x00014C48
 
 ChaoMain_29.c:
 	.text       start:0x00015060 end:0x00015968
@@ -102,6 +102,9 @@ ChaoMain_31.c:
 
 ChaoMain_32.c:
 	.text       start:0x00015E44 end:0x000160D8
+
+chao/al_knowledge.c:
+	.text       start:0x00016180 end:0x000169B4
 
 ChaoMain_33.c:
 	.text       start:0x000169B4 end:0x00016C64
@@ -175,6 +178,9 @@ ChaoMain_55.c:
 ChaoMain_56.c:
 	.text       start:0x0001FCC0 end:0x0001FCF4
 
+chao/al_parameter.c:
+	.text       start:0x000209C8 end:0x00021ED8
+
 chao/al_world.c:
 	.text       start:0x00029344 end:0x00029FB8
 
@@ -247,7 +253,7 @@ ChaoMain_79.c:
 ChaoMain_80.c:
 	.text       start:0x00038EB8 end:0x00039A10
 
-ChaoMain_81.c:
+chao/al_behavior/albhv_illness.c:
 	.text       start:0x00039A10 end:0x0003AABC
 
 ChaoMain_82.c:

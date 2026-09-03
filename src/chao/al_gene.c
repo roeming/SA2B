@@ -5,11 +5,9 @@
 #include "samt/sonic/chao/al_emotion.h"
 #include "samt/sonic/chao/al_garden_info.h"
 #include "samt/sonic/chao/al_global.h"
+#include "samt/sonic/chao/al_face.h"
 #include "samt/sonic/chao/chao.h"
 #include "samt/ninja/ninja.h"
-
-extern u8 eye_default_num[3][3][3];
-extern u8 mouse_default_num[3][3][3];
 
 extern int AL_GetPreStageNumber();
 extern int AL_GetStageNumber();
@@ -33,6 +31,46 @@ extern BOOL AL_IsDark(u8 type);
 #define RAND_S32(maxIndex)  (s32)(RAND_RANGE((maxIndex) - 1e-4f))
 #define RAND_U32(maxIndex)  (u32)(RAND_RANGE((maxIndex) - 1e-4f))
 #define RAND_BOOL()         (int)RAND_RANGE(1.99f)
+
+// indices for eye and mouth go as following
+// stat < -45 : 0, stat < 45 : 1, stat >= 45 : 2
+// indexed by [aggressive][kindness][curiosity]
+
+static u8 eye_default_num[3][3][3] = {
+    {
+        {AL_EYE_NUM_NORMAL,  AL_EYE_NUM_NORMAL, AL_EYE_NUM_NORMAL},
+        {AL_EYE_NUM_NORMAL,  AL_EYE_NUM_NORMAL, AL_EYE_NUM_NORMAL},
+        {AL_EYE_NUM_NORMAL,  AL_EYE_NUM_NORMAL, AL_EYE_NUM_NORMAL},
+    },
+    {
+        {AL_EYE_NUM_TRON,    AL_EYE_NUM_NORMAL, AL_EYE_NUM_NORMAL},
+        {AL_EYE_NUM_NORMAL,  AL_EYE_NUM_NORMAL, AL_EYE_NUM_NIKO},
+        {AL_EYE_NUM_NORMAL,  AL_EYE_NUM_NORMAL, AL_EYE_NUM_NIKO},
+    },
+    {
+        {AL_EYE_NUM_ANGER,   AL_EYE_NUM_ANGER,  AL_EYE_NUM_ANGER},
+        {AL_EYE_NUM_TRON,    AL_EYE_NUM_NORMAL, AL_EYE_NUM_NIKO},
+        {AL_EYE_NUM_NORMAL,  AL_EYE_NUM_NIKO,   AL_EYE_NUM_NIKO},
+    },
+};
+
+static u8 mouse_default_num[3][3][3] = {
+    {
+        {AL_MOUTH_NUM_NONE,  AL_MOUTH_NUM_NONE,  AL_MOUTH_NUM_MUSU},
+        {AL_MOUTH_NUM_KOIKE, AL_MOUTH_NUM_NONE,  AL_MOUTH_NUM_MUSU},
+        {AL_MOUTH_NUM_NONE,  AL_MOUTH_NUM_NONE,  AL_MOUTH_NUM_NIKO},
+    },
+    {
+        {AL_MOUTH_NUM_NONE,  AL_MOUTH_NUM_SHARK, AL_MOUTH_NUM_SHARK},
+        {AL_MOUTH_NUM_NONE,  AL_MOUTH_NUM_NONE,  AL_MOUTH_NUM_NONE},
+        {AL_MOUTH_NUM_NONE,  AL_MOUTH_NUM_NIKO,  AL_MOUTH_NUM_NIKO},
+    },
+    {
+        {AL_MOUTH_NUM_NONE,  AL_MOUTH_NUM_SHARK, AL_MOUTH_NUM_SHARK},
+        {AL_MOUTH_NUM_NONE,  AL_MOUTH_NUM_MUSU,  AL_MOUTH_NUM_MUSU},
+        {AL_MOUTH_NUM_NIKO,  AL_MOUTH_NUM_NIKO,  AL_MOUTH_NUM_NIKO},
+    },
+};
 
 void AL_GeneCreatePlane(AL_GENE *pGene) {
   AL_GeneCreate(pGene);
@@ -263,7 +301,7 @@ void AL_GeneCreate_Dark(AL_GENE *pGene) {
   pGene->APos[1] = pGene->APos[0] = -5;
 }
 
-void AL_EmotionStateInit(AL_EMOTION *pEmotion) {
+static void AL_EmotionStateInit(AL_EMOTION *pEmotion) {
   // @BUG
   // these are all bugged
   // we're indexing starting at EM_ST_SLEEPY=8, but there are only 11 states
@@ -351,7 +389,7 @@ void AL_SucceedGeneParam(AL_GENE *pGene, CHAO_PARAM_GC *pParam) {
   pParam->body.growth = 0.f;
 }
 
-void AL_AblLevelUp(int skill, AL_GENE *pGene, CHAO_PARAM_GC *pParam) {
+static void AL_AblLevelUp(int skill, AL_GENE *pGene, CHAO_PARAM_GC *pParam) {
   if (pParam->Abl[skill] < AL_MAX_SKILL) {
     if (pGene->Abl[skill][0] == pParam->Abl[skill]) {
       pGene->Abl[skill][0]++;

@@ -15,11 +15,7 @@ void AL_GeneCreate_Light(AL_GENE *pGene);
 
 void AL_GeneCreate_Dark(AL_GENE *pGene);
 
-void AL_EmotionStateInit(AL_EMOTION*);
-
 void AL_SucceedGeneParam(AL_GENE *pGene, CHAO_PARAM_GC *pParam);
-
-void AL_AblLevelUp(int skill, AL_GENE *pGene, CHAO_PARAM_GC *pParam);
 
 void AL_GrowGeneParam(AL_GENE *pGene, CHAO_PARAM_GC *pParam);
 

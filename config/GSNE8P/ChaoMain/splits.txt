@@ -8,60 +8,72 @@ Sections:
 
 ChaoMain_0.c:
 	.text       start:0x00000000 end:0x000000F8
+	.rodata     start:0x00000000 end:0x00000010
+	.data       start:0x00000000 end:0x00000030
 
 chao/al_behavior.c:
 	.text       start:0x000000F8 end:0x00000A24
+	.rodata     start:0x00000010 end:0x00000018
 
-ChaoMain_2.c:
-	.text       start:0x00000AA0 end:0x00001B7C
+chao/al_buyobuyo.c:
+	.text       start:0x00000A24 end:0x00001B7C
+	.rodata     start:0x00000018 end:0x000000B8
+	.data       start:0x000003B8 end:0x00000440
+	.bss        start:0x00000000 end:0x00001890
 
 chao/al_camera.c:
-	.text       start:0x00001B7C end:0x0000255C
+	.text       start:0x00001B7C end:0x0000256C
+	.rodata     start:0x000000B8 end:0x000001A8
+	.data       start:0x00000800 end:0x00000818
+	.bss        start:0x00001890 end:0x00001D00
 
-ChaoMain_4.c:
-	.text       start:0x0000265C end:0x00003384
+chao/al_chao_info.c:
+	.text       start:0x0000256C end:0x000034F4
+	.rodata     start:0x000001A8 end:0x000001E8
 
 chao/al_collision.c:
 	.text       start:0x00003500 end:0x0000392C
+	.rodata     start:0x000001E8 end:0x00000210
 
-ChaoMain_7.c:
-	.text       start:0x0000394C end:0x000039A8
+chao/al_confirmload.cpp:
+	.text       start:0x0000392C end:0x00004740
+	.rodata     start:0x00000210 end:0x00000398
+	.data       start:0x00000A78 end:0x00000AC0
+	.bss        start:0x00003DD0 end:0x00003DD8
 
-ChaoMain_8.c:
-	.text       start:0x000039A8 end:0x000046BC
-
-ChaoMain_9.c:
-	.text       start:0x000047A8 end:0x0000480C
-
-ChaoMain_10.c:
-	.text       start:0x0000480C end:0x00005774
-
-ChaoMain_11.c:
-	.text       start:0x00005774 end:0x00005844
-
-ChaoMain_12.c:
-	.text       start:0x00005964 end:0x000059D8
+chao/al_confirmsave.c:
+	.text       start:0x00004740 end:0x00005A3C
+	.rodata     start:0x000003A0 end:0x00000600
+	.data       start:0x00000AC0 end:0x00000B30
+	.bss        start:0x00003DD8 end:0x00003DE8
 
 chao/al_control.c:
 	.text       start:0x00005A3C end:0x00005BAC
 
 chao/al_crc32.c:
 	.text       start:0x00005BAC end:0x00005D10
+	.rodata     start:0x00000610 end:0x00000A10
 
-ChaoMain_14.c:
-	.text       start:0x00005EE4 end:0x00007B30
+chao/al_deform.c:
+	.text       start:0x00005D10 end:0x00007B30
+	.data       start:0x00000B30 end:0x00000B80
 
-ChaoMain_15.c:
-	.text       start:0x00007B30 end:0x00008EFC
+chao/al_draw.c:
+	.text       start:0x00007B30 end:0x00008F20
 
-ChaoMain_16.c:
-	.text       start:0x00008F20 end:0x0000A788
+chao/al_egg.c:
+	.text       start:0x00008F20 end:0x0000A7E8
+	.rodata     start:0x00000AC0 end:0x00000C08
 
-ChaoMain_17.c:
-	.text       start:0x0000AA1C end:0x0000B324
+chao/al_emotion.c:
+	.text       start:0x0000A7E8 end:0x0000A9AC
 
-ChaoMain_18.c:
-	.text       start:0x0000B5DC end:0x0000C1AC
+chao/al_face.c:
+	.text       start:0x0000A9AC end:0x0000B324
+	.rodata     start:0x00000C08 end:0x00000C98
+
+chao/al_field.c:
+	.text       start:0x0000B5DC end:0x0000C1F8
 
 chao/al_garden_info.c:
 	.text       start:0x0000C1FC end:0x0000DFD8
@@ -84,6 +96,7 @@ ChaoMain_24.c:
 chao/al_gene.c:
 	.text       start:0x0000FF60 end:0x000127A0
 	.rodata     start:0x00000EF0 end:0x00000F70
+	.data       start:0x00002A18 end:0x00002A50
 
 chao/al_hold.c:
 	.text       start:0x000127A0 end:0x00012B08

@@ -677,6 +677,7 @@ config.libs = [
     ChaoRel(
         "ChaoMain",
         [
+            Object(NonMatching, "chao/al_face.c"),
             Object(NonMatching, "chao/al_garden_info.c"),
             Object(Matching, "chao/al_gene.c"),
         ]

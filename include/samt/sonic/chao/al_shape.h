@@ -40,10 +40,10 @@ AL_VERTEX_INFO;
 typedef struct al_model
 {
     int* VList;
-    __int16* PList;
+    s16* PList;
     NJS_POINT3 Center;
     float Radius;
-    __int16 OrgTexId[4];
+    s16 OrgTexId[4];
     int PListSize;
     int nbVertex;
     CNK_VN_VERTEX* pVertex;

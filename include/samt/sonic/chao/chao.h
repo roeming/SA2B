@@ -23,9 +23,6 @@
 /** Colli Info **/
 #include <samt/sonic/c_colli/ccl_info.h>
 
-
-#include <samt/sonic/chao/al_garden_info.h>
-
 /************************/
 /*  Abstract Types      */
 /************************/
@@ -38,7 +35,7 @@ typedef struct al_group_object_list     AL_GROUP_OBJECT_LIST;
 /************************/
 /*  Typedefs            */
 /************************/
-typedef int32_t (*BHV_FUNC)(task *);
+typedef s32 (*BHV_FUNC)(task *);
 
 /************************/
 /*  Enums               */
@@ -313,46 +310,46 @@ enum
 /************************/
 typedef struct
 {
-    uint8_t  Exp[8];
-    uint8_t  Abl[8];
-    uint8_t  Lev[8];
-    uint16_t Skills[8];
+    u8  Exp[8];
+    u8  Abl[8];
+    u8  Lev[8];
+    u16 Skills[8];
 }
 TMP_PARAM;
 
 typedef struct
 {
-    int32_t bhv;
+    s32 bhv;
 }
 KW_BHV_ENTRY;
 
 typedef struct 
 {
-    uint16_t     Flag;
-    uint16_t     Mode;
-    uint16_t     SubMode;
-    uint16_t     MoveMode;
-    int32_t      InterruptFlag;
-    int32_t      Timer;
-    int32_t      SubTimer;
-    int32_t      LimitTimer;
+    u16     Flag;
+    u16     Mode;
+    u16     SubMode;
+    u16     MoveMode;
+    s32      InterruptFlag;
+    s32      Timer;
+    s32      SubTimer;
+    s32      LimitTimer;
 //  sint32       BehaviorTimer; // SADX Only
-    uint16_t     Intention;
-    uint16_t     IntentionMode;
-    uint16_t     IntentionSubMode;
-    uint32_t     IntentionTimer[18]; 
-    uint32_t     IntervalTimer[128];
-    int32_t      FreeWork;
+    u16     Intention;
+    u16     IntentionMode;
+    u16     IntentionSubMode;
+    u32     IntentionTimer[18]; 
+    u32     IntervalTimer[128];
+    s32      FreeWork;
     f32          MoveRadius;
     NJS_POINT3   BasePos;
     BHV_FUNC     PrevFunc;
-    int32_t      nbBhvFuncEntry;
-    int32_t      CurrBhvFuncNum;
+    s32      nbBhvFuncEntry;
+    s32      CurrBhvFuncNum;
     BHV_FUNC     BhvFuncList[16];
-    int32_t      ReserveTimerList[16];
-    int32_t      CurrKwBhvNum;
+    s32      ReserveTimerList[16];
+    s32      CurrKwBhvNum;
     KW_BHV_ENTRY KwBhvList[4];
-    uint32_t     dummy[16];
+    u32     dummy[16];
 }
 AL_BEHAVIOR;
 
@@ -396,11 +393,11 @@ typedef struct
     f32             RightHandItemActiveFlag;
 
     /** Shape info **/
-    int32_t   palette;
-    int16_t   Flag;
-    int16_t   ColorNum;
-    int16_t   EnvNum;
-    int32_t   IconColor;
+    s32   palette;
+    s16   Flag;
+    s16   ColorNum;
+    s16   EnvNum;
+    s32   IconColor;
     f32       SclH;
     f32       SclV;
     f32       CamDist;
@@ -409,39 +406,39 @@ AL_SHAPE;
 
 typedef struct
 {
-    int32_t    EyeTimer;
-    int16_t    EyeColorNum;
-    int16_t    EyeCurrNum;
-    int16_t    EyeDefaultNum;
-    int32_t    MouthTimer;
-    int16_t    MouthCurrNum;
-    int16_t    MouthDefaultNum;
+    s32    EyeTimer;
+    s16    EyeColorNum;
+    s16    EyeCurrNum;
+    s16    EyeDefaultNum;
+    s32    MouthTimer;
+    s16    MouthCurrNum;
+    s16    MouthDefaultNum;
     f32        EyePosX;
     f32        EyePosY;
     f32        EyeSclX;
     f32        EyeSclY;
-    uint32_t   Flag;
+    u32   Flag;
     AL_OBJECT* pEyeObject[2];
     AL_OBJECT* pMouthObject;
-    int32_t    EyeLidBlinkMode;
-    int32_t    EyeLidBlinkTimer;
-    int32_t    EyeLidBlinkAng;
-    int32_t    EyeLidExpressionMode;
-    int32_t    EyeLidExpressionTimer;
-    int32_t    EyeLidExpressionDefaultCloseAng;
-    int32_t    EyeLidExpressionCurrCloseAng;
-    int32_t    EyeLidExpressionAimCloseAng;
-    int32_t    EyeLidExpressionDefaultSlopeAng;
-    int32_t    EyeLidExpressionCurrSlopeAng;
-    int32_t    EyeLidExpressionAimSlopeAng;
+    s32    EyeLidBlinkMode;
+    s32    EyeLidBlinkTimer;
+    s32    EyeLidBlinkAng;
+    s32    EyeLidExpressionMode;
+    s32    EyeLidExpressionTimer;
+    s32    EyeLidExpressionDefaultCloseAng;
+    s32    EyeLidExpressionCurrCloseAng;
+    s32    EyeLidExpressionAimCloseAng;
+    s32    EyeLidExpressionDefaultSlopeAng;
+    s32    EyeLidExpressionCurrSlopeAng;
+    s32    EyeLidExpressionAimSlopeAng;
 }
 AL_FACE_CTRL;
 
 typedef struct
 {
-    uint16_t Mode;
-    uint16_t TexNum;
-    uint16_t Timer;
+    u16 Mode;
+    u16 TexNum;
+    u16 Timer;
     NJS_POINT3 Offset;
     NJS_POINT3 Pos;
     NJS_POINT3 Velo;
@@ -452,16 +449,16 @@ AL_ICON_INFO;
 
 typedef struct
 {
-    int16_t CurrType;
-    int16_t NextType;
-    int32_t Timer;
-    int32_t NextTimer;
-    int32_t PuniPhase;
-    int32_t PosPhase;
-    uint32_t Color;
-    uint16_t TexAnimNum;
-    uint16_t TexAnimTimer;
-    int32_t ang;
+    s16 CurrType;
+    s16 NextType;
+    s32 Timer;
+    s32 NextTimer;
+    s32 PuniPhase;
+    s32 PosPhase;
+    u32 Color;
+    u16 TexAnimNum;
+    u16 TexAnimTimer;
+    s32 ang;
     NJS_POINT3 Up;
     NJS_POINT3 Pos;
     AL_ICON_INFO Upper;
@@ -471,8 +468,8 @@ AL_ICON;
 
 typedef struct
 {
-    uint16_t  Flag;
-    uint16_t  CurrNum;
+    u16  Flag;
+    u16  CurrNum;
     f32       Ratio;
     NJS_LINE  Plane;
 }
@@ -480,23 +477,23 @@ AL_ZONE;
 
 typedef struct al_perception_link
 {
-    int16_t         info[4];
+    s16         info[4];
     f32             tgtdist;
-    int32_t         InSightFlag;
-    int32_t         HearFlag;
-    int32_t         SmellFlag;
+    s32         InSightFlag;
+    s32         HearFlag;
+    s32         SmellFlag;
     ALW_ENTRY_WORK* pEntry;
 }
 AL_PERCEPTION_LIST[32];
 
 typedef struct
 {
-    uint16_t           nbPerception;
-    int32_t            InSightFlag;
-    int32_t            HeardFlag;
-    int32_t            SmellFlag;
+    u16           nbPerception;
+    s32            InSightFlag;
+    s32            HeardFlag;
+    s32            SmellFlag;
     f32                NearestDist;
-    int16_t            NearestNum;
+    s16            NearestNum;
     AL_PERCEPTION_LIST list;
 }
 AL_PERCEPTION_INFO;
@@ -504,8 +501,8 @@ AL_PERCEPTION_INFO;
 typedef struct
 {
     f32                SightRange;
-    int32_t            SightAngle;
-    int32_t            SightAngleHalf;
+    s32            SightAngle;
+    s32            SightAngleHalf;
     f32                HearRange;
     f32                SmellRange;
     AL_PERCEPTION_INFO Player;
@@ -523,59 +520,59 @@ typedef struct chaowk
 {
     TASKWK;
 
-    uint32_t       Timer;
-    task*          pMayu;
-    task*          pBooktask;
-    int32_t        NestFlag;
-    task*          pAnytask;
-    task*          pAimtask;
-    int32_t        AimNum;
-    int32_t        RememberNum;
-    int32_t        pitch;
-    f32            ClimbFirstPos;
-    BOOL            IsParamCopy;
-    CHAO_PARAM_GC* pParamGC;
-    TMP_PARAM      tmpParam;
-    int32_t        Stamina;
-    int32_t        AimStamina;
-    task*          tp;
-    Angle          pre_ang[3];
-    uint32_t       ChaoFlag;
-    uint16_t       ColliFormat;
-    f32            CurrZone;
-    MOTION_CTRL    MotionCtrl;
-    MOTION_CTRL    MiniMotionCtrl;
-    MOTION_TABLE   MiniMotionTable[4];
-    AL_BEHAVIOR    Behavior;
-    AL_SHAPE       Shape;
-    AL_FACE_CTRL   Face;
-    AL_ICON        Icon;
-    AL_ZONE        Zone;
-    AL_PERCEPTION  Perception;
-    void*          pWork;
+    /* 0x30 */ u32              imer;
+    /* 0x34 */ task *           pMayu;
+    /* 0x38 */ task *           pBooktask;
+    /* 0x3C */ s32              NestFlag;
+    /* 0x40 */ task *           pAnytask;
+    /* 0x44 */ task *           pAimtask;
+    /* 0x48 */ s32              AimNum;
+    /* 0x4C */ s32              RememberNum;
+    /* 0x50 */ s32              pitch;
+    /* 0x54 */ f32              ClimbFirstPos;
+    /* 0x58 */ BOOL             IsParamCopy;
+    /* 0x5C */ CHAO_PARAM_GC *  pParamGC;
+    /* 0x60 */ TMP_PARAM        tmpParam;
+    /* 0x00 */ s32              Stamina;
+    /* 0x00 */ s32              AimStamina;
+    /* 0x00 */ task *           tp;
+    /* 0x00 */ Angle            pre_ang[3];
+    /* 0x00 */ u32              ChaoFlag;
+    /* 0x00 */ u16              ColliFormat;
+    /* 0x00 */ f32              CurrZone;
+    /* 0x00 */ MOTION_CTRL      MotionCtrl;
+    /* 0x00 */ MOTION_CTRL      MiniMotionCtrl;
+    /* 0x00 */ MOTION_TABLE     MiniMotionTable[4];
+    /* 0x00 */ AL_BEHAVIOR      Behavior;
+    /* 0x00 */ AL_SHAPE         Shape;
+    /* 0x00 */ AL_FACE_CTRL     Face;
+    /* 0x00 */ AL_ICON          Icon;
+    /* 0x00 */ AL_ZONE          Zone;
+    /* 0x00 */ AL_PERCEPTION    Perception;
+    /* 0x00 */ void *           pWork;
 }
 chaowk;
 
 typedef struct al_shape_element
 {
-    uint8_t  type;
-    uint8_t  DefaultEyeNum;
-    uint8_t  DefaultMouthNum;
-    uint8_t  HonbuNum;
-    uint8_t  ObakeHead;
-    uint8_t  ObakeBody;
-    uint8_t  MedalNum;
-    uint8_t  ColorNum;
-    uint8_t  NonTex;
-    uint8_t  JewelNum;
-    uint8_t  MultiNum;
-    int8_t   MinimalParts[8];
-    int16_t  HPos;              // divided by 10'000 on copy
-    int16_t  VPos;              // divided by 10'000 on copy
-    int16_t  APos;              // divided by 10'000 on copy
-    int16_t  Growth;            // divided by 10'000 on copy
-    uint8_t  name[8];
-    uint16_t Skill[8];
+    u8  type;
+    u8  DefaultEyeNum;
+    u8  DefaultMouthNum;
+    u8  HonbuNum;
+    u8  ObakeHead;
+    u8  ObakeBody;
+    u8  MedalNum;
+    u8  ColorNum;
+    u8  NonTex;
+    u8  JewelNum;
+    u8  MultiNum;
+    s8   MinimalParts[8];
+    s16  HPos;              // divided by 10'000 on copy
+    s16  VPos;              // divided by 10'000 on copy
+    s16  APos;              // divided by 10'000 on copy
+    s16  Growth;            // divided by 10'000 on copy
+    u8  name[8];
+    u16 Skill[8];
 }
 AL_SHAPE_ELEMENT;
 

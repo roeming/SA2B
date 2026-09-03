@@ -90,10 +90,10 @@ eAL_MOUTH_NUM;
 /************************/
 /*  Data                */
 /************************/
-#define AL_EyeTexIdList         DATA_ARY(int16_t, 0x008A7A70, [14])
-#define EyeColorTexIdList       DATA_ARY(int16_t, 0x008A7AC0, [12])
+// #define AL_EyeTexIdList         DATA_ARY(int16_t, 0x008A7A70, [14])
+// #define EyeColorTexIdList       DATA_ARY(int16_t, 0x008A7AC0, [12])
 
-#define AL_MouthTexIdList       DATA_ARY(int16_t, 0x008A7A8C, [13][2])
+// #define AL_MouthTexIdList       DATA_ARY(int16_t, 0x008A7A8C, [13][2])
 
 /************************/
 /*  Functions           */

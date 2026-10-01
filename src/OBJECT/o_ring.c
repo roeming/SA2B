@@ -471,7 +471,7 @@ void Ring(task *tp) {
       GET_RING_WK(tp)->shadow_posy = -1000000.0f;
     }
     break;
-  case 1:
+  case RINGMD_1:
     if (twp->cwp->flag & 1) {
       task *tp2 = CCL_IsHitPlayer(tp);
       if (tp2) {
@@ -526,7 +526,7 @@ void Ring(task *tp) {
       }
     }
     break;
-  case 3:
+  case RINGMD_3:
     if (tp->mwp) {
       GET_RING_MWK(tp)->flag |= 2;
       GET_RING_MWK(tp)->tp = NULL;

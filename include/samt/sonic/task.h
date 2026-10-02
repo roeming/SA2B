@@ -167,6 +167,8 @@ void    GenocideTask( void );
 */
 void    DestroyTask( task* tp );
 
+void FreeTaskC(task *tp);
+
 #ifdef SAMT_INCL_FUNCPTRS
 
 /********************************/

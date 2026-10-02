@@ -7,8 +7,6 @@
 #include "set.h"
 #include "types.h"
 
-extern BOOL _rename_CheckFlag0x20(task *tp);
-extern void _rename_SetFlag0x20(task *tp);
 extern void fn_800260FC(u32, float, float, float);
 extern void fn_8011E158(NJS_CNK_OBJECT *);
 extern s32 _rename_GetPlayerCharacter(s32);

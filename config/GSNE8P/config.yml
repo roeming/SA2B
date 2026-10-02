@@ -264,6 +264,16 @@ modules:
     header: assets/ring_displaylist_4.inc
     header_type: none
     custom_type: displaylist
+  - symbol: o_cont_chao_dl_0!.data:0x2143c0
+    binary: assets/o_cont_chao_dl_0.bin
+    header: assets/o_cont_chao_dl_0.inc
+    header_type: none
+    custom_type: displaylist
+  - symbol: o_cont_chao_dl_1!.data:0x2143e0
+    binary: assets/o_cont_chao_dl_1.bin
+    header: assets/o_cont_chao_dl_1.inc
+    header_type: none
+    custom_type: displaylist
 
   - symbol: ring_vecs_1!.data:0x242e1c
     binary: assets/ring_vecs_1.bin
@@ -305,6 +315,16 @@ modules:
     header: assets/ring_vecs_8.inc
     header_type: none
     custom_type: vtx
+  - symbol: o_cont_chao_vec_0!.data:0x214200
+    binary: assets/o_cont_chao_vec_0.bin
+    header: assets/o_cont_chao_vec_0.inc
+    header_type: none
+    custom_type: vtx
+  - symbol: o_cont_chao_vec_1!.data:0x214260
+    binary: assets/o_cont_chao_vec_1.bin
+    header: assets/o_cont_chao_vec_1.inc
+    header_type: none
+    custom_type: vtx
 
   - symbol: ring_material_1!.data:0x24314c
     binary: assets/ring_material_1.bin
@@ -326,6 +346,16 @@ modules:
     header: assets/ring_material_4.inc
     header_type: none
     custom_type: gjmaterial
+  - symbol: o_cont_chao_material_0!.data:0x214350
+    binary: assets/o_cont_chao_material_0.bin
+    header: assets/o_cont_chao_material_0.inc
+    header_type: none
+    custom_type: gjmaterial
+  - symbol: o_cont_chao_material_1!.data:0x2143a0
+    binary: assets/o_cont_chao_material_1.bin
+    header: assets/o_cont_chao_material_1.inc
+    header_type: none
+    custom_type: gjmaterial
 
   - symbol: ring_s16_poly_list!.data:0x242a44
     binary: assets/ring_s16_poly_list.bin
@@ -342,6 +372,26 @@ modules:
     header: assets/ring_uvs_0.inc
     header_type: none
     custom_type: s16
+  - symbol: o_cont_chao_uv_0!.data:0x2142c0
+    binary: assets/o_cont_chao_uv_0.bin
+    header: assets/o_cont_chao_uv_0.inc
+    header_type: none
+    custom_type: s16
+  - symbol: o_cont_chao_cnk_mdl_0_tex!.data:0x2144a4
+    binary: assets/o_cont_chao_cnk_mdl_0_tex.bin
+    header: assets/o_cont_chao_cnk_mdl_0_tex.inc
+    header_type: none
+    custom_type: s16
+  - symbol: o_cont_chao_cnk_mdl_1_tex!.data:0x214634
+    binary: assets/o_cont_chao_cnk_mdl_1_tex.bin
+    header: assets/o_cont_chao_cnk_mdl_1_tex.inc
+    header_type: none
+    custom_type: s16
+  - symbol: o_cont_chao_cnk_mdl_2_tex!.data:0x214700
+    binary: assets/o_cont_chao_cnk_mdl_2_tex.bin
+    header: assets/o_cont_chao_cnk_mdl_2_tex.inc
+    header_type: none
+    custom_type: s16
 
   - symbol: ring_s32_vert_list!.data:0x242af8
     binary: assets/ring_s32_vert_list.bin
@@ -351,6 +401,21 @@ modules:
   - symbol: _rename_defaultRingModel_s32_list!.data:0x243f18
     binary: assets/_rename_defaultRingModel_s32_list.bin
     header: assets/_rename_defaultRingModel_s32_list.inc
+    header_type: none
+    custom_type: s32
+  - symbol: o_cont_chao_cnk_mdl_0_vtx!.data:0x21453c
+    binary: assets/o_cont_chao_cnk_mdl_0_vtx.bin
+    header: assets/o_cont_chao_cnk_mdl_0_vtx.inc
+    header_type: none
+    custom_type: s32
+  - symbol: o_cont_chao_cnk_mdl_1_vtx!.data:0x214668
+    binary: assets/o_cont_chao_cnk_mdl_1_vtx.bin
+    header: assets/o_cont_chao_cnk_mdl_1_vtx.inc
+    header_type: none
+    custom_type: s32
+  - symbol: o_cont_chao_cnk_mdl_2_vtx!.data:0x214734
+    binary: assets/o_cont_chao_cnk_mdl_2_vtx.bin
+    header: assets/o_cont_chao_cnk_mdl_2_vtx.inc
     header_type: none
     custom_type: s32
 

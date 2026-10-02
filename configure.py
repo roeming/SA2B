@@ -326,12 +326,16 @@ def MatchingFor(*versions):
     return config.version in versions
 
 
-config.warn_missing_config = True
+config.warn_missing_config = False
 config.warn_missing_source = False
 
 CHAOPIPE_C = Object(Matching, "OBJECT/o_chaopipe.c")
 SPRING_C = Object(Matching, "OBJECT/o_spring.c")
 RING_C = Object(Matching, "OBJECT/o_ring.c")
+CONT_CHAO = Object(Matching, "OBJECT/o_container_chao.c")
+CONT_IRON = Object(NonMatching, "OBJECT/o_container_iron.c")
+CONT_WOOD = Object(NonMatching, "OBJECT/o_container_wood.c")
+EF_CRASH3D = Object(NonMatching, "OBJECT/ef_crash3D.c")
 
 config.libs = [
     DolphinLib(
@@ -671,9 +675,13 @@ config.libs = [
             Object(Matching, "stg13_cityescape/o_ce_board_col.c"),
             Object(NonMatching, "stg13_cityescape/o_ce_sobj.c"),
             Object(NonMatching, "stg13_cityescape/cityescape.c"),
+            EF_CRASH3D,
             CHAOPIPE_C,
             SPRING_C,
             RING_C,
+            CONT_CHAO,
+            CONT_IRON,
+            CONT_WOOD,
         ]
     ),
     ChaoRel(

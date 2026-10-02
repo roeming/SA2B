@@ -135,6 +135,9 @@ GJ_COMP_TYPE;
 
 #define GJ_ARR_TYPE(component, storage) ((component) | (storage) << 4)
 
+#define GJS_ARR_ENTRY(arr, id, component, storage) \
+ { (id), sizeof(*(arr)), ARRAY_COUNT(arr), GJ_ARR_TYPE((component), (storage)), (arr), sizeof((arr)) }
+
 /********************************/
 /*  Structures                  */
 /********************************/

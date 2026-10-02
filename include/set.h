@@ -50,6 +50,11 @@ void SetUserFlag(task *tp, Sint8 flag);
 Sint8 GetUserFlag(task *tp);
 // 0x822D45B0	procedure	1586
 void SetObjEditTable(void *pTable);
+
+BOOL _rename_CheckFlag0x20(task*);
+void _rename_SetFlag0x20(task*);
+BOOL _rename_CheckFlag0x40(task*);
+void _rename_SetFlag0x40(task*);
 // data
 // Sint32 boolCheckRangeIn	0x8316BF44	data
 // Sint32 boolOneShot	0x85C2AFAC	data

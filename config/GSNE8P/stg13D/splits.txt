@@ -19,11 +19,11 @@ stg13_cityescape/o_ce_board_col.c:
 	.text       start:0x0000096C end:0x00000C70
 	.rodata     start:0x00000010 end:0x00000018
 
-stg13D_2.c:
+stg13_cityescape/o_ce_car.c:
 	.text       start:0x00000C70 end:0x00007A00
 	.rodata     start:0x00000018 end:0x00000108
 
-stg13D_3.c:
+stg13_cityescape/o_ce_crashobj.c:
 	.text       start:0x00007A00 end:0x00008A34
 	.rodata     start:0x00000108 end:0x00000170
 
@@ -83,6 +83,9 @@ stg13D_18.c:
 	.text       start:0x00012A98 end:0x00012B98
 	.rodata     start:0x00000468 end:0x00000470
 
+OBJECT/ef_objlight.c:
+	.text       start:0x00012BDC end:0x00012D0C
+
 stg13D_19.c:
 	.text       start:0x00012D0C end:0x000138B0
 	.rodata     start:0x00000470 end:0x00000478
@@ -102,7 +105,7 @@ stg13D_22.c:
 	.text       start:0x00018CA8 end:0x00018D70
 	.rodata     start:0x00000590 end:0x00000598
 
-stg13D_23.c:
+OBJECT/ef_crash3D.c:
 	.text       start:0x00018D70 end:0x0001ACAC
 	.rodata     start:0x00000598 end:0x00000600
 
@@ -202,11 +205,11 @@ stg13D_47.c:
 	.text       start:0x00022EF0 end:0x00023510
 	.rodata     start:0x000009A0 end:0x000009C0
 
-stg13D_48.c:
+OBJECT/o_bunchin.c:
 	.text       start:0x00023510 end:0x00024A68
 	.rodata     start:0x000009C0 end:0x00000A08
 
-stg13D_49.c:
+OBJECT/o_chaokey.c:
 	.text       start:0x00024A68 end:0x00025528
 	.rodata     start:0x00000A08 end:0x00000A58
 
@@ -214,35 +217,42 @@ OBJECT/o_chaopipe.c:
 	.text       start:0x00025528 end:0x000258DC
 	.rodata     start:0x00000A58 end:0x00000A78
 
-stg13D_52.c:
-	.text       start:0x000258DC end:0x00026160
+OBJECT/o_container_chao.c:
+	.text       start:0x000258DC end:0x0002624C
 	.rodata     start:0x00000A78 end:0x00000AC0
+	.data       start:0x002141C0 end:0x00214960
+	.bss        start:0x00000710 end:0x00000718
 
-stg13D_53.c:
-	.text       start:0x0002624C end:0x00026D44
+OBJECT/o_container_iron.c:
+	.text       start:0x0002624C end:0x00026E64
 	.rodata     start:0x00000AC0 end:0x00000B08
+	.data       start:0x00214960 end:0x00215660
+	.bss        start:0x00000718 end:0x00000720
 
-stg13D_54.c:
+OBJECT/o_container_wood.c:
 	.text       start:0x00026E64 end:0x00027CA8
 	.rodata     start:0x00000B08 end:0x00000B60
+	.data       start:0x00215660 end:0x00216638
+	.bss        start:0x00000720 end:0x00000728
 
 OBJECT/o_degring_linear.c:
-	.text       start:0x00027CDC end:0x00028468
+	.text       start:0x00027CA8 end:0x000285F8
 	.rodata     start:0x00000B60 end:0x00000B78
+	.data       start:0x00216638 end:0x00216640
 
-stg13D_56.c:
-	.text       start:0x00028CEC end:0x00028FFC
+OBJECT/o_dmyobj.c:
+	.text       start:0x000285F8 end:0x00028FFC
 	.rodata     start:0x00000B78 end:0x00000B98
 
-stg13D_57.c:
+OBJECT/o_dynamite.c:
 	.text       start:0x00028FFC end:0x00029A20
 	.rodata     start:0x00000B98 end:0x00000BB8
 
 stg13D_58.c:
-	.text       start:0x00029A74 end:0x0002A3F4
+	.text       start:0x00029A20 end:0x0002A3F4
 	.rodata     start:0x00000BB8 end:0x00000BE8
 
-stg13D_59.c:
+OBJECT/o_emerald.c:
 	.text       start:0x0002A3F4 end:0x0002CFA4
 	.rodata     start:0x00000BE8 end:0x00000C38
 
@@ -254,21 +264,17 @@ OBJECT/o_goalring.c:
 	.text       start:0x0002D208 end:0x0002E520
 	.rodata     start:0x00000C40 end:0x00000C98
 
-stg13D_62.c:
+OBJECT/o_hintbox.c:
 	.text       start:0x0002E520 end:0x0002EF40
 	.rodata     start:0x00000C98 end:0x00000CC8
 
-stg13D_63.c:
+OBJECT/o_ironball2.c:
 	.text       start:0x0002EF40 end:0x0002FAAC
 	.rodata     start:0x00000CC8 end:0x00000CF0
 
-stg13D_64.c:
-	.text       start:0x0002FAAC end:0x000309D4
-	.rodata     start:0x00000CF0 end:0x00000D20
-
-stg13D_65.c:
-	.text       start:0x000309D4 end:0x00030AA4
-	.rodata     start:0x00000D20 end:0x00000D28
+OBJECT/o_itembox.c:
+	.text       start:0x0002FAAC end:0x00030C54
+	.rodata     start:0x00000CF0 end:0x00000D28
 
 stg13D_66.c:
 	.text       start:0x00030D28 end:0x000317D0
@@ -310,11 +316,11 @@ stg13D_75.c:
 	.text       start:0x00036ADC end:0x00038C2C
 	.rodata     start:0x00000EC0 end:0x00000F30
 
-stg13D_76.c:
-	.text       start:0x00039104 end:0x0003D510
+OBJECT/o_messenger.c:
+	.text       start:0x00038F8C end:0x0003D510
 	.rodata     start:0x00000F30 end:0x00001018
 
-stg13D_77.c:
+OBJECT/o_ori.c:
 	.text       start:0x0003D510 end:0x0003DFDC
 	.rodata     start:0x00001018 end:0x00001060
 

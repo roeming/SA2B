@@ -12,14 +12,19 @@
 /************************/
 /** Used by the game to save and load, not SAMT 
     SAMT uses it's own variables for all these functions **/
-#define __control_3d_flag_      DATA_REF(uint32_t, 0x01DEB6A4)
-#define __constant_attr_and_    DATA_REF(uint32_t, 0x01DEB6A8)
-#define __constant_attr_or_     DATA_REF(uint32_t, 0x01DEB6A0)
+// #define __constant_attr_or_     DATA_REF(uint32_t, 0x01DEB6A0)
+// #define __control_3d_flag_      DATA_REF(uint32_t, 0x01DEB6A4)
+// #define __constant_attr_and_    DATA_REF(uint32_t, 0x01DEB6A8)
+
 
 /************************/
 /*  Functions           */
 /************************/
 EXTERN_START
+extern u32 __control_3d_flag_;
+extern u32 __constant_attr_and_;
+extern u32 __constant_attr_or_;
+
 void    SaveControl3D( void );
 void    LoadControl3D( void );
 

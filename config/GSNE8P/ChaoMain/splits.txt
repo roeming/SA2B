@@ -104,7 +104,7 @@ chao/al_hold.c:
 chao/al_icon.c:
 	.text       start:0x00012B08 end:0x00014C48
 
-ChaoMain_29.c:
+chao/al_intention.c:
 	.text       start:0x00015060 end:0x00015968
 
 ChaoMain_30.c:
@@ -227,61 +227,55 @@ ChaoMain_66.c:
 ChaoMain_67.c:
 	.text       start:0x00031104 end:0x000313AC
 
-ChaoMain_68.c:
+chao/chao.c.c:
 	.text       start:0x0003148C end:0x00031CC8
 
-ChaoMain_69.c:
+chao/al_behavior/albhv_anger.c:
 	.text       start:0x00031CC8 end:0x00032964
 
-ChaoMain_70.c:
-	.text       start:0x00032964 end:0x000332C4
+chao/al_behavior/albhv_art.c:
+	.text       start:0x00032964 end:0x00033388
 
-ChaoMain_71.c:
-	.text       start:0x00033388 end:0x00033E24
+chao/al_behavior/albhv_capture.c:
+	.text       start:0x00033388 end:0x00033FA8
 
-ChaoMain_72.c:
-	.text       start:0x00033FA8 end:0x000340C0
+chao/al_behavior/albhv_common.c:
+	.text       start:0x00033FA8 end:0x000349B0
 
-ChaoMain_73.c:
-	.text       start:0x000340C0 end:0x0003485C
+chao/al_behavior/albhv_dakko.c:
+	.text       start:0x000349B0 end:0x000355E8
 
-ChaoMain_74.c:
-	.text       start:0x00034CC4 end:0x000355E8
-
-ChaoMain_75.c:
+chao/al_behavior/albhv_damage.c:
 	.text       start:0x000355E8 end:0x000362EC
 
-ChaoMain_76.c:
+chao/al_behavior/albhv_dance.c:
 	.text       start:0x000362EC end:0x000371C8
 
-ChaoMain_77.c:
-	.text       start:0x000373CC end:0x00038224
+chao/al_behavior/albhv_food.c:
+	.text       start:0x000371C8 end:0x00038408
 
-ChaoMain_78.c:
+chao/al_behavior/albhv_fear.c:
 	.text       start:0x00038408 end:0x00038BE0
 
-ChaoMain_79.c:
+chao/al_behavior/albhv_hima.c:
 	.text       start:0x00038BE0 end:0x00038EB8
 
-ChaoMain_80.c:
+chao/al_behavior/albhv_hungry.c:
 	.text       start:0x00038EB8 end:0x00039A10
 
 chao/al_behavior/albhv_illness.c:
 	.text       start:0x00039A10 end:0x0003AABC
 
-ChaoMain_82.c:
-	.text       start:0x0003AABC end:0x0003ADE0
+chao/al_behavior/albhv_life.c:
+	.text       start:0x0003AABC end:0x0003B8DC
 
-ChaoMain_83.c:
-	.text       start:0x0003AE44 end:0x0003B764
-
-ChaoMain_84.c:
+chao/al_behavior/albhv_minimal.c:
 	.text       start:0x0003B8DC end:0x0003CDDC
 
-ChaoMain_85.c:
-	.text       start:0x0003CDDC end:0x0003DDE8
+chao/al_behavior/albhv_move.c:
+	.text       start:0x0003CDDC end:0x0003DFC0
 
-ChaoMain_86.c:
+chao/al_behavior/albhv_music.c:
 	.text       start:0x0003DFEC end:0x0003FBD0
 
 ChaoMain_87.c:
@@ -311,8 +305,8 @@ ChaoMain_94.c:
 ChaoMain_95.c:
 	.text       start:0x00042308 end:0x00042770
 
-ChaoMain_96.c:
-	.text       start:0x00042770 end:0x000436D4
+chao/al_behavior/albhv_seed.c:
+	.text       start:0x00042770 end:0x00042D88
 
 ChaoMain_97.c:
 	.text       start:0x000438CC end:0x00045468

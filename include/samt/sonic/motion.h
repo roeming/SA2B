@@ -34,43 +34,38 @@ enum
 /*  Structures          */
 /************************/
 /****** Hook Info *******************************************************************/
-typedef struct
-{
-    NJS_MOTION* pMotion;
-    int16_t     mode;
-    int16_t     posture;
-    int32_t     next;
-    int32_t     link_step;
-    f32         start;
-    f32         end;
-    f32         spd;
-}
-MOTION_TABLE;
+typedef struct {
+  /* 0x00 */ NJS_MOTION *pMotion;
+  /* 0x04 */ int16_t mode;
+  /* 0x06 */ int16_t posture;
+  /* 0x08 */ int32_t next;
+  /* 0x0C */ int32_t link_step;
+  /* 0x10 */ f32 start;
+  /* 0x14 */ f32 end;
+  /* 0x18 */ f32 spd;
+} MOTION_TABLE; // size: 0x1C
 
-typedef struct
-{
-    uint16_t    mode;
-    f32         frame;
-    f32         start;
-    f32         end;
-    f32         spd;
-    NJS_MOTION* pMotion;
-}
-MOTION_INFO;
+typedef struct {
+  /* 0x00 */ uint16_t mode;
+  /* 0x04 */ f32 frame;
+  /* 0x08 */ f32 start;
+  /* 0x0C */ f32 end;
+  /* 0x10 */ f32 spd;
+  /* 0x14 */ NJS_MOTION *pMotion;
+} MOTION_INFO; // size: 0x18
 
 typedef struct 
 {
-    uint16_t      flag;
-    uint16_t      posture;
-    int32_t       curr_num;
-    int32_t       next_num;
-    f32           multi_spd;
-    f32           link_spd;
-    f32           ratio;
-    MOTION_INFO   minfo[2];
-    MOTION_TABLE* table;
-}
-MOTION_CTRL;
+  /* 0x00 */ uint16_t flag;
+  /* 0x02 */ uint16_t posture;
+  /* 0x04 */ int32_t curr_num;
+  /* 0x08 */ int32_t next_num;
+  /* 0x0C */ f32 multi_spd;
+  /* 0x10 */ f32 link_spd;
+  /* 0x14 */ f32 ratio;
+  /* 0x18 */ MOTION_INFO minfo[2];
+  /* 0x48 */ MOTION_TABLE *table;
+} MOTION_CTRL; // size: 0x4c
 
 /************************/
 /*  Functions           */

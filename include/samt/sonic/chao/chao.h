@@ -308,14 +308,12 @@ enum
 /************************/
 /*  Structures          */
 /************************/
-typedef struct
-{
-    u8  Exp[8];
-    u8  Abl[8];
-    u8  Lev[8];
-    u16 Skills[8];
-}
-TMP_PARAM;
+typedef struct {
+  /* 0x00 */ u8 Exp[8];
+  /* 0x08 */ u8 Abl[8];
+  /* 0x10 */ u8 Lev[8];
+  /* 0x18 */ u16 Skills[8];
+} TMP_PARAM; // size: 0x28
 
 typedef struct
 {
@@ -323,258 +321,238 @@ typedef struct
 }
 KW_BHV_ENTRY;
 
-typedef struct 
-{
-    u16     Flag;
-    u16     Mode;
-    u16     SubMode;
-    u16     MoveMode;
-    s32      InterruptFlag;
-    s32      Timer;
-    s32      SubTimer;
-    s32      LimitTimer;
-//  sint32       BehaviorTimer; // SADX Only
-    u16     Intention;
-    u16     IntentionMode;
-    u16     IntentionSubMode;
-    u32     IntentionTimer[18]; 
-    u32     IntervalTimer[128];
-    s32      FreeWork;
-    f32          MoveRadius;
-    NJS_POINT3   BasePos;
-    BHV_FUNC     PrevFunc;
-    s32      nbBhvFuncEntry;
-    s32      CurrBhvFuncNum;
-    BHV_FUNC     BhvFuncList[16];
-    s32      ReserveTimerList[16];
-    s32      CurrKwBhvNum;
-    KW_BHV_ENTRY KwBhvList[4];
-    u32     dummy[16];
-}
-AL_BEHAVIOR;
+typedef struct {
+  /* 0x000 */ u16 Flag;
+  /* 0x002 */ u16 Mode;
+  /* 0x004 */ u16 SubMode;
+  /* 0x006 */ u16 MoveMode;
+  /* 0x008 */ s32 InterruptFlag;
+  /* 0x00C */ s32 Timer;
+  /* 0x010 */ s32 SubTimer;
+  /* 0x014 */ s32 LimitTimer;
+  /*       */ //  sint32       BehaviorTimer; // SADX Only
+  /* 0x018 */ u16 Intention;
+  /* 0x01A */ u16 IntentionMode;
+  /* 0x01C */ u16 IntentionSubMode;
+  /* 0x020 */ u32 IntentionTimer[18];
+  /* 0x068 */ u32 IntervalTimer[128];
+  /* 0x268 */ s32 FreeWork;
+  /* 0x26C */ f32 MoveRadius;
+  /* 0x270 */ NJS_POINT3 BasePos;
+  /* 0x27C */ BHV_FUNC PrevFunc;
+  /* 0x280 */ s32 nbBhvFuncEntry;
+  /* 0x284 */ s32 CurrBhvFuncNum;
+  /* 0x288 */ BHV_FUNC BhvFuncList[16];
+  /* 0x2C8 */ s32 ReserveTimerList[16];
+  /* 0x308 */ s32 CurrKwBhvNum;
+  /* 0x30C */ KW_BHV_ENTRY KwBhvList[4];
+  /* 0x31C */ u32 dummy[16];
+} AL_BEHAVIOR; // size: 0x35C
 
-typedef struct
-{
-    /** Shape object **/
-    AL_OBJECT* pObject;
-    AL_OBJECT* CurrObjectList[40];
+typedef struct {
+  /** Shape object **/
+  /* 0x000 */ AL_OBJECT *pObject;
+  /* 0x004 */ AL_OBJECT *CurrObjectList[40];
+  
+  /** Shape object lists **/
+  /* 0x0A4 */ AL_GROUP_OBJECT_LIST *pObjectList;
+  /* 0x0A8 */ AL_GROUP_OBJECT_LIST *pObjectListH;
+  /* 0x0AC */ AL_GROUP_OBJECT_LIST *pObjectListD;
+  
+  /** Positions **/
+  /* 0x0B0 */ NJS_POINT3 BodyPos;
+  /* 0x0BC */ NJS_POINT3 HeadPos;
+  /* 0x0C8 */ NJS_POINT3 LeftHandPos;
+  /* 0x0D4 */ NJS_POINT3 RightHandPos;
+  /* 0x0E0 */ NJS_POINT3 LeftFootPos;
+  /* 0x0EC */ NJS_POINT3 RightFootPos;
+  /* 0x0F8 */ NJS_POINT3 MouthPos;
+  
+  /** Vectors **/
+  /* 0x104 */ NJS_VECTOR MouthVec;
+  /* 0x110 */ NJS_VECTOR LeftEyePos;
+  /* 0x11C */ NJS_VECTOR LeftEyeVec;
+  /* 0x128 */ NJS_VECTOR RightEyePos;
+  /* 0x134 */ NJS_VECTOR RightEyeVec;
+  
+  /** Left hand item **/
+  /* 0x140 */ NJS_CNK_OBJECT *pLeftHandItemObject;
+  /* 0x144 */ NJS_TEXLIST *pLeftHandItemTexlist;
+  /* 0x148 */ f32 LeftHandItemScale;
+  /* 0x14C */ f32 LeftHandItemActiveFlag;
+  
+  /** Right hand item **/
+  /* 0x150 */ NJS_CNK_OBJECT *pRightHandItemObject;
+  /* 0x154 */ NJS_TEXLIST *pRightHandItemTexlist;
+  /* 0x158 */ f32 RightHandItemScale;
+  /* 0x15C */ f32 RightHandItemActiveFlag;
+  
+  /** Shape info **/
+  /* 0x160 */ s32 palette;
+  /* 0x164 */ s16 Flag;
+  /* 0x166 */ s16 ColorNum;
+  /* 0x168 */ s16 EnvNum;
+  /* 0x16C */ s32 IconColor;
+  /* 0x170 */ f32 SclH;
+  /* 0x174 */ f32 SclV;
+  /* 0x178 */ f32 CamDist;
+} AL_SHAPE; // size: 0x17c
 
-    /** Shape object lists **/
-    AL_GROUP_OBJECT_LIST* pObjectList;
-    AL_GROUP_OBJECT_LIST* pObjectListH;
-    AL_GROUP_OBJECT_LIST* pObjectListD;
+typedef struct {
+  /* 0x00 */ s32 EyeTimer;
+  /* 0x04 */ s16 EyeColorNum;
+  /* 0x06 */ s16 EyeCurrNum;
+  /* 0x08 */ s16 EyeDefaultNum;
+  /* 0x0C */ s32 MouthTimer;
+  /* 0x10 */ s16 MouthCurrNum;
+  /* 0x12 */ s16 MouthDefaultNum;
+  /* 0x14 */ f32 EyePosX;
+  /* 0x18 */ f32 EyePosY;
+  /* 0x1C */ f32 EyeSclX;
+  /* 0x20 */ f32 EyeSclY;
+  /* 0x24 */ u32 Flag;
+  /* 0x28 */ AL_OBJECT *pEyeObject[2];
+  /* 0x30 */ AL_OBJECT *pMouthObject;
+  /* 0x34 */ s32 EyeLidBlinkMode;
+  /* 0x38 */ s32 EyeLidBlinkTimer;
+  /* 0x3C */ s32 EyeLidBlinkAng;
+  /* 0x40 */ s32 EyeLidExpressionMode;
+  /* 0x44 */ s32 EyeLidExpressionTimer;
+  /* 0x48 */ s32 EyeLidExpressionDefaultCloseAng;
+  /* 0x4C */ s32 EyeLidExpressionCurrCloseAng;
+  /* 0x50 */ s32 EyeLidExpressionAimCloseAng;
+  /* 0x54 */ s32 EyeLidExpressionDefaultSlopeAng;
+  /* 0x58 */ s32 EyeLidExpressionCurrSlopeAng;
+  /* 0x5C */ s32 EyeLidExpressionAimSlopeAng;
+} AL_FACE_CTRL; // size: 0x60
 
-    /** Positions **/
-    NJS_POINT3 BodyPos;
-    NJS_POINT3 HeadPos;
-    NJS_POINT3 LeftHandPos;
-    NJS_POINT3 RightHandPos;
-    NJS_POINT3 LeftFootPos;
-    NJS_POINT3 RightFootPos;
-    NJS_POINT3 MouthPos;
+typedef struct {
+  /* 0x00 */ u16 Mode;
+  /* 0x02 */ u16 TexNum;
+  /* 0x04 */ u16 Timer;
+  /* 0x08 */ NJS_POINT3 Offset;
+  /* 0x14 */ NJS_POINT3 Pos;
+  /* 0x20 */ NJS_POINT3 Velo;
+  /* 0x2C */ NJS_POINT3 Scl;
+  /* 0x38 */ NJS_POINT3 SclSpd;
+} AL_ICON_INFO; // size: 0x44
 
-    /** Vectors **/
-    NJS_VECTOR MouthVec;
-    NJS_VECTOR LeftEyePos;
-    NJS_VECTOR LeftEyeVec;
-    NJS_VECTOR RightEyePos;
-    NJS_VECTOR RightEyeVec;
+typedef struct {
+  /* 0x00 */ s16 CurrType;
+  /* 0x02 */ s16 NextType;
+  /* 0x04 */ s32 Timer;
+  /* 0x08 */ s32 NextTimer;
+  /* 0x0C */ s32 PuniPhase;
+  /* 0x10 */ s32 PosPhase;
+  /* 0x14 */ u32 Color;
+  /* 0x18 */ u16 TexAnimNum;
+  /* 0x1A */ u16 TexAnimTimer;
+  /* 0x1C */ s32 ang;
+  /* 0x20 */ NJS_POINT3 Up;
+  /* 0x2C */ NJS_POINT3 Pos;
+  /* 0x38 */ AL_ICON_INFO Upper;
+  /* 0x7C */ AL_ICON_INFO Lower;
+} AL_ICON; // size: 0xC0
 
-    /** Left hand item **/
-    NJS_CNK_OBJECT* pLeftHandItemObject;
-    NJS_TEXLIST*    pLeftHandItemTexlist;
-    f32             LeftHandItemScale;
-    f32             LeftHandItemActiveFlag;
+typedef struct {
+  /* 0x0 */ u16 Flag;
+  /* 0x2 */ u16 CurrNum;
+  /* 0x4 */ f32 Ratio;
+  /* 0x8 */ NJS_LINE Plane;
+} AL_ZONE; // size: 0x20
 
-    /** Right hand item **/
-    NJS_CNK_OBJECT* pRightHandItemObject;
-    NJS_TEXLIST*    pRightHandItemTexlist;
-    f32             RightHandItemScale;
-    f32             RightHandItemActiveFlag;
+struct al_perception_link {
+  /* 0x00 */ s16 info[4];
+  /* 0x08 */ f32 tgtdist;
+  /* 0x0C */ s32 InSightFlag;
+  /* 0x10 */ s32 HearFlag;
+  /* 0x14 */ s32 SmellFlag;
+  /* 0x18 */ ALW_ENTRY_WORK *pEntry;
+}; // size: 0x1C
 
-    /** Shape info **/
-    s32   palette;
-    s16   Flag;
-    s16   ColorNum;
-    s16   EnvNum;
-    s32   IconColor;
-    f32       SclH;
-    f32       SclV;
-    f32       CamDist;
-}
-AL_SHAPE;
+typedef struct al_perception_link AL_PERCEPTION_LIST[32];
 
-typedef struct
-{
-    s32    EyeTimer;
-    s16    EyeColorNum;
-    s16    EyeCurrNum;
-    s16    EyeDefaultNum;
-    s32    MouthTimer;
-    s16    MouthCurrNum;
-    s16    MouthDefaultNum;
-    f32        EyePosX;
-    f32        EyePosY;
-    f32        EyeSclX;
-    f32        EyeSclY;
-    u32   Flag;
-    AL_OBJECT* pEyeObject[2];
-    AL_OBJECT* pMouthObject;
-    s32    EyeLidBlinkMode;
-    s32    EyeLidBlinkTimer;
-    s32    EyeLidBlinkAng;
-    s32    EyeLidExpressionMode;
-    s32    EyeLidExpressionTimer;
-    s32    EyeLidExpressionDefaultCloseAng;
-    s32    EyeLidExpressionCurrCloseAng;
-    s32    EyeLidExpressionAimCloseAng;
-    s32    EyeLidExpressionDefaultSlopeAng;
-    s32    EyeLidExpressionCurrSlopeAng;
-    s32    EyeLidExpressionAimSlopeAng;
-}
-AL_FACE_CTRL;
+typedef struct {
+  /* 0x00 */ u16 nbPerception;
+  /* 0x04 */ s32 InSightFlag;
+  /* 0x08 */ s32 HeardFlag;
+  /* 0x0C */ s32 SmellFlag;
+  /* 0x10 */ f32 NearestDist;
+  /* 0x14 */ s16 NearestNum;
+  /* 0x18 */ AL_PERCEPTION_LIST list;
+} AL_PERCEPTION_INFO; // size: 0x398
 
-typedef struct
-{
-    u16 Mode;
-    u16 TexNum;
-    u16 Timer;
-    NJS_POINT3 Offset;
-    NJS_POINT3 Pos;
-    NJS_POINT3 Velo;
-    NJS_POINT3 Scl;
-    NJS_POINT3 SclSpd;
-}
-AL_ICON_INFO;
-
-typedef struct
-{
-    s16 CurrType;
-    s16 NextType;
-    s32 Timer;
-    s32 NextTimer;
-    s32 PuniPhase;
-    s32 PosPhase;
-    u32 Color;
-    u16 TexAnimNum;
-    u16 TexAnimTimer;
-    s32 ang;
-    NJS_POINT3 Up;
-    NJS_POINT3 Pos;
-    AL_ICON_INFO Upper;
-    AL_ICON_INFO Lower;
-}
-AL_ICON;
-
-typedef struct
-{
-    u16  Flag;
-    u16  CurrNum;
-    f32       Ratio;
-    NJS_LINE  Plane;
-}
-AL_ZONE;
-
-typedef struct al_perception_link
-{
-    s16         info[4];
-    f32             tgtdist;
-    s32         InSightFlag;
-    s32         HearFlag;
-    s32         SmellFlag;
-    ALW_ENTRY_WORK* pEntry;
-}
-AL_PERCEPTION_LIST[32];
-
-typedef struct
-{
-    u16           nbPerception;
-    s32            InSightFlag;
-    s32            HeardFlag;
-    s32            SmellFlag;
-    f32                NearestDist;
-    s16            NearestNum;
-    AL_PERCEPTION_LIST list;
-}
-AL_PERCEPTION_INFO;
-
-typedef struct
-{
-    f32                SightRange;
-    s32            SightAngle;
-    s32            SightAngleHalf;
-    f32                HearRange;
-    f32                SmellRange;
-    AL_PERCEPTION_INFO Player;
-    AL_PERCEPTION_INFO Chao;
-    AL_PERCEPTION_INFO Fruit;
-    AL_PERCEPTION_INFO Tree;
-    AL_PERCEPTION_INFO Toy;
-    AL_PERCEPTION_INFO Sound;
-}
-AL_PERCEPTION;
+typedef struct {
+  /* 0x0000 */ f32 SightRange;
+  /* 0x0004 */ s32 SightAngle;
+  /* 0x0008 */ s32 SightAngleHalf;
+  /* 0x000C */ f32 HearRange;
+  /* 0x0010 */ f32 SmellRange;
+  /* 0x0014 */ AL_PERCEPTION_INFO Player;
+  /* 0x03AC */ AL_PERCEPTION_INFO Chao;
+  /* 0x0744 */ AL_PERCEPTION_INFO Fruit;
+  /* 0x0ADC */ AL_PERCEPTION_INFO Tree;
+  /* 0x0E74 */ AL_PERCEPTION_INFO Toy;
+  /* 0x120C */ AL_PERCEPTION_INFO Sound;
+} AL_PERCEPTION; // size:0x15A4
 
 #define GET_CHAOWK(_tp)     ((chaowk*)(_tp)->twp)
 
-typedef struct chaowk
-{
-    TASKWK;
+typedef struct chaowk {
+  TASKWK;
 
-    /* 0x30 */ u32              imer;
-    /* 0x34 */ task *           pMayu;
-    /* 0x38 */ task *           pBooktask;
-    /* 0x3C */ s32              NestFlag;
-    /* 0x40 */ task *           pAnytask;
-    /* 0x44 */ task *           pAimtask;
-    /* 0x48 */ s32              AimNum;
-    /* 0x4C */ s32              RememberNum;
-    /* 0x50 */ s32              pitch;
-    /* 0x54 */ f32              ClimbFirstPos;
-    /* 0x58 */ BOOL             IsParamCopy;
-    /* 0x5C */ CHAO_PARAM_GC *  pParamGC;
-    /* 0x60 */ TMP_PARAM        tmpParam;
-    /* 0x00 */ s32              Stamina;
-    /* 0x00 */ s32              AimStamina;
-    /* 0x00 */ task *           tp;
-    /* 0x00 */ Angle            pre_ang[3];
-    /* 0x00 */ u32              ChaoFlag;
-    /* 0x00 */ u16              ColliFormat;
-    /* 0x00 */ f32              CurrZone;
-    /* 0x00 */ MOTION_CTRL      MotionCtrl;
-    /* 0x00 */ MOTION_CTRL      MiniMotionCtrl;
-    /* 0x00 */ MOTION_TABLE     MiniMotionTable[4];
-    /* 0x00 */ AL_BEHAVIOR      Behavior;
-    /* 0x00 */ AL_SHAPE         Shape;
-    /* 0x00 */ AL_FACE_CTRL     Face;
-    /* 0x00 */ AL_ICON          Icon;
-    /* 0x00 */ AL_ZONE          Zone;
-    /* 0x00 */ AL_PERCEPTION    Perception;
-    /* 0x00 */ void *           pWork;
-}
-chaowk;
+  /* 0x0030 */ u32 Timer;
+  /* 0x0034 */ task *pMayu;
+  /* 0x0038 */ task *pBooktask;
+  /* 0x003C */ s32 NestFlag;
+  /* 0x0040 */ task *pAnytask;
+  /* 0x0044 */ task *pAimtask;
+  /* 0x0048 */ s32 AimNum;
+  /* 0x004C */ s32 RememberNum;
+  /* 0x0050 */ s32 pitch;
+  /* 0x0054 */ f32 ClimbFirstPos;
+  /* 0x0058 */ BOOL IsParamCopy;
+  /* 0x005C */ CHAO_PARAM_GC *pParamGC;
+  /* 0x0060 */ TMP_PARAM tmpParam;
+  /* 0x0088 */ s32 Stamina;
+  /* 0x008C */ s32 AimStamina;
+  /* 0x0090 */ task *tp;
+  /* 0x0094 */ Angle pre_ang[3];
+  /* 0x00A0 */ u32 ChaoFlag;
+  /* 0x00A4 */ u16 ColliFormat;
+  /* 0x00A8 */ f32 CurrZone;
+  /* 0x00AC */ MOTION_CTRL MotionCtrl;
+  /* 0x00F8 */ MOTION_CTRL MiniMotionCtrl;
+  /* 0x0144 */ MOTION_TABLE MiniMotionTable[4];
+  /* 0x01b4 */ AL_BEHAVIOR Behavior;
+  /* 0x0510 */ AL_SHAPE Shape;
+  /* 0x068C */ AL_FACE_CTRL Face;
+  /* 0x06EC */ AL_ICON Icon;
+  /* 0x07AC */ AL_ZONE Zone;
+  /* 0x07CC */ AL_PERCEPTION Perception;
+  /* 0x1D70 */ void *pWork;
+} chaowk; // size: 0x1D74
 
-typedef struct al_shape_element
-{
-    u8  type;
-    u8  DefaultEyeNum;
-    u8  DefaultMouthNum;
-    u8  HonbuNum;
-    u8  ObakeHead;
-    u8  ObakeBody;
-    u8  MedalNum;
-    u8  ColorNum;
-    u8  NonTex;
-    u8  JewelNum;
-    u8  MultiNum;
-    s8   MinimalParts[8];
-    s16  HPos;              // divided by 10'000 on copy
-    s16  VPos;              // divided by 10'000 on copy
-    s16  APos;              // divided by 10'000 on copy
-    s16  Growth;            // divided by 10'000 on copy
-    u8  name[8];
-    u16 Skill[8];
-}
-AL_SHAPE_ELEMENT;
+typedef struct al_shape_element {
+  /* 0x00 */ u8 type;
+  /* 0x01 */ u8 DefaultEyeNum;
+  /* 0x02 */ u8 DefaultMouthNum;
+  /* 0x03 */ u8 HonbuNum;
+  /* 0x04 */ u8 ObakeHead;
+  /* 0x05 */ u8 ObakeBody;
+  /* 0x06 */ u8 MedalNum;
+  /* 0x07 */ u8 ColorNum;
+  /* 0x08 */ u8 NonTex;
+  /* 0x09 */ u8 JewelNum;
+  /* 0x0A */ u8 MultiNum;
+  /* 0x0B */ s8 MinimalParts[8];
+  /* 0x14 */ s16 HPos;                // divided by 10'000 on copy
+  /* 0x16 */ s16 VPos;                // divided by 10'000 on copy
+  /* 0x18 */ s16 APos;                // divided by 10'000 on copy
+  /* 0x1A */ s16 Growth;              // divided by 10'000 on copy
+  /* 0x1C */ u8 name[8];
+  /* 0x24 */ u16 Skill[8];
+} AL_SHAPE_ELEMENT; // size: 0x34
 
 /************************/
 /*  Data                */

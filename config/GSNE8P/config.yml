@@ -418,6 +418,81 @@ modules:
     header: assets/o_cont_chao_cnk_mdl_2_vtx.inc
     header_type: none
     custom_type: s32
+  - symbol: o_cont_wood_cnk_mdl_0_tex!.data:0x2156a0
+    binary: assets/o_cont_wood_cnk_mdl_0_tex.bin
+    header: assets/o_cont_wood_cnk_mdl_0_tex.inc
+    header_type: none
+    custom_type: s16
+  - symbol: o_cont_wood_cnk_mdl_0_vtx!.data:0x21574c
+    binary: assets/o_cont_wood_cnk_mdl_0_vtx.bin
+    header: assets/o_cont_wood_cnk_mdl_0_vtx.inc
+    header_type: none
+    custom_type: s32
+  - symbol: o_cont_wood_vec_0!.data:0x215830
+    binary: assets/o_cont_wood_vec_0.bin
+    header: assets/o_cont_wood_vec_0.inc
+    header_type: none
+    custom_type: vtx
+  - symbol: o_cont_wood_vec_1!.data:0x215890
+    binary: assets/o_cont_wood_vec_1.bin
+    header: assets/o_cont_wood_vec_1.inc
+    header_type: none
+    custom_type: vtx
+  - symbol: o_cont_wood_uv_0!.data:0x2158f0
+    binary: assets/o_cont_wood_uv_0.bin
+    header: assets/o_cont_wood_uv_0.inc
+    header_type: none
+    custom_type: s16
+  - symbol: o_cont_wood_material_0!.data:0x215980
+    binary: assets/o_cont_wood_material_0.bin
+    header: assets/o_cont_wood_material_0.inc
+    header_type: none
+    custom_type: gjmaterial
+  - symbol: o_cont_wood_material_1!.data:0x2159d0
+    binary: assets/o_cont_wood_material_1.bin
+    header: assets/o_cont_wood_material_1.inc
+    header_type: none
+    custom_type: gjmaterial
+  - symbol: o_cont_wood_dl_0!.data:0x2159e0
+    binary: assets/o_cont_wood_dl_0.bin
+    header: assets/o_cont_wood_dl_0.inc
+    header_type: none
+    custom_type: displaylist
+  - symbol: o_cont_wood_dl_1!.data:0x215a00
+    binary: assets/o_cont_wood_dl_1.bin
+    header: assets/o_cont_wood_dl_1.inc
+    header_type: none
+    custom_type: displaylist
+  - symbol: o_cont_wood_cnk_mdl_1_tex!.data:0x215ab8
+    binary: assets/o_cont_wood_cnk_mdl_1_tex.bin
+    header: assets/o_cont_wood_cnk_mdl_1_tex.inc
+    header_type: none
+    custom_type: s16
+  - symbol: o_cont_wood_cnk_mdl_1_vtx!.data:0x215c68
+    binary: assets/o_cont_wood_cnk_mdl_1_vtx.bin
+    header: assets/o_cont_wood_cnk_mdl_1_vtx.inc
+    header_type: none
+    custom_type: s32
+  - symbol: o_cont_wood_cnk_mdl_2_tex!.data:0x215f10
+    binary: assets/o_cont_wood_cnk_mdl_2_tex.bin
+    header: assets/o_cont_wood_cnk_mdl_2_tex.inc
+    header_type: none
+    custom_type: s16
+  - symbol: o_cont_wood_cnk_mdl_2_vtx!.data:0x216018
+    binary: assets/o_cont_wood_cnk_mdl_2_vtx.bin
+    header: assets/o_cont_wood_cnk_mdl_2_vtx.inc
+    header_type: none
+    custom_type: s32
+  - symbol: o_cont_wood_cnk_mdl_3_tex!.data:0x2161d0
+    binary: assets/o_cont_wood_cnk_mdl_3_tex.bin
+    header: assets/o_cont_wood_cnk_mdl_3_tex.inc
+    header_type: none
+    custom_type: s16
+  - symbol: o_cont_wood_cnk_mdl_3_vtx!.data:0x21635c
+    binary: assets/o_cont_wood_cnk_mdl_3_vtx.bin
+    header: assets/o_cont_wood_cnk_mdl_3_vtx.inc
+    header_type: none
+    custom_type: s32
 
 - object: orig/GSNE8P/files/stg14D.rel
   hash: 68b094fa0f3e58adb7276d34d4b9881ac1c64fae
